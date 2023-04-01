@@ -1,5 +1,5 @@
 import { Space_Grotesk } from 'next/font/google';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 
@@ -18,7 +18,7 @@ interface Props {
 }
 
 function Navbar({ className, children }: Props['navbar']) {
-   const { asPath } = Router;
+   const { asPath, push } = useRouter();
 
    return (
       <nav
@@ -30,7 +30,7 @@ function Navbar({ className, children }: Props['navbar']) {
                className={`relative cursor-pointer pb-[4px] text-xl font-semibold after:absolute after:bottom-0 after:right-0 after:h-[2.5px] after:bg-white after:transition-all after:duration-200 after:content-[""] hover:after:w-3/4 ${
                   asPath === `/#${target}` ? 'after:w-3/4' : 'after:w-0'
                }`}
-               onClick={() => Router.push(`#${target}`)}
+               onClick={() => push(`#${target}`)}
             >
                {name}
             </p>

@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import Layout from 'components/Layout';
 
 export default function Home() {
+   const router = useRouter();
+
    return (
       <Layout>
          <Head>
@@ -18,7 +20,7 @@ export default function Home() {
 
             <button
                className='rounded-md border-[1.5px] border-white bg-white px-[16px] py-[10px] text-xl font-medium text-black transition-all duration-150 hover:bg-inherit hover:text-white'
-               onClick={() => Router.push('/#about')}
+               onClick={() => router.push('/#about')}
             >
                whoami?
             </button>
