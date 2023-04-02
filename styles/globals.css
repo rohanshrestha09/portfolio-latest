@@ -6,6 +6,19 @@ html {
    scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+   width: 14px;
+   background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+   background: rgb(110 110 110);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+   background: rgba(110 110 110 / 0.5);
+}
+
 .animated-text {
    background: linear-gradient(to right, #e73c7e, rgba(1, 185, 241, 1));
    background-size: 150% 150%;
@@ -24,4 +37,8 @@ html {
    100% {
       background-position: 0% 50%;
    }
+}
+
+.navbar {
+   backdrop-filter: blur(20px) saturate(1.7);
 }
