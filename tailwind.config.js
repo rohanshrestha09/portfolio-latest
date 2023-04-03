@@ -10,6 +10,7 @@ module.exports = {
          fontSize: {
             '8xl': ['96px', 1],
             '7xl': ['72px', 1],
+            '5xl': ['48px', 1],
             lg: ['18px', '28px'],
             xl: ['20px', '28px'],
          },
