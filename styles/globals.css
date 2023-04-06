@@ -2,13 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
 html {
    scroll-behavior: smooth;
+   background: linear-gradient(
+      to bottom,
+      #000101 0%,
+      rgb(34, 57, 49),
+      rgb(34, 57, 49)
+   );
 }
 
 body::-webkit-scrollbar {
    width: 14px;
-   background-color: black;
+   background: black;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -41,4 +53,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .navbar {
    backdrop-filter: blur(20px) saturate(1.7);
+}
+
+img {
+   overflow-clip-margin: content-box;
+   overflow: clip;
 }
