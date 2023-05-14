@@ -1,6 +1,6 @@
 const option = {
    unitToConvert: 'px',
-   viewportWidth: 1850,
+   viewportWidth: 1440,
    unitPrecision: 5,
    propList: ['*'],
    viewportUnit: 'vw',

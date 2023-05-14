@@ -12,6 +12,10 @@ interface Props {
       className?: string;
       items: { name: string; target: string }[];
    };
+   Header: {
+      color?: string;
+      children: React.ReactNode;
+   };
    Content: {
       id?: string;
       className?: string;
@@ -125,10 +129,22 @@ function Navbar({ className, items }: Props['Navbar']) {
    );
 }
 
+function Header({ color, children }: Props['Header']) {
+   return (
+      <p
+         className={`text-center text-9xl font-semibold sm:text-5xl ${
+            color && `text-[${color}]`
+         }`}
+      >
+         {children}
+      </p>
+   );
+}
+
 function Content({ className, children, ...props }: Props['Content']) {
    return (
       <section
-         className={`min-h-screen px-[100px] py-[310px] sm:px-[250px] sm:py-[180px] ${
+         className={`min-h-screen px-[100px] py-[310px] xl:px-[250px] xl:py-[180px] ${
             className ?? ''
          }`}
          {...props}
@@ -175,6 +191,8 @@ export default function Layout({ className, children }: Props['Layout']) {
 }
 
 Layout.Navbar = Navbar;
+
+Layout.Header = Header;
 
 Layout.Content = Content;
 

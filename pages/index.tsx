@@ -1,116 +1,15 @@
 import Layout from 'components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
-import BlogSansarImage from 'public/images/blogsansar.png';
-import PatraImage from 'public/images/patra.png';
-import BlogImage from 'public/images/blog.png';
-import InstagramImage from 'public/images/insta.png';
-import DiscordImage from 'public/images/discord.png';
-import PortfolioImage from 'public/images/portfolio.png';
+
 import { Fragment } from 'react';
 import { IconType } from 'react-icons';
-import { FaNode } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
-import {
-   SiGithub,
-   SiExpress,
-   SiFirebase,
-   SiMongodb,
-   SiNextdotjs,
-   SiRedux,
-   SiTailwindcss,
-   SiTypescript,
-   SiReact,
-   SiNestjs,
-   SiFigma,
-   SiJquery,
-} from 'react-icons/si';
+import { SiGithub } from 'react-icons/si';
+
+import { projects, tools } from 'content';
 
 export default function Home() {
-   const projects = [
-      {
-         key: 'blogsansar',
-         name: 'BlogSansar',
-         description:
-            'BlogSansar is a web platform which allows users to write their own blogs and share it with others.',
-         link: 'https://blogsansar.live',
-         github: 'https://github.com/rohanshrestha09/blog-express',
-         images: [BlogSansarImage],
-         icons: [
-            SiMongodb,
-            SiNextdotjs,
-            SiRedux,
-            SiTailwindcss,
-            FaNode,
-            SiExpress,
-            SiFirebase,
-            SiTypescript,
-         ],
-      },
-      {
-         key: 'patra',
-         name: 'Patra',
-         description:
-            'A realtime messaging web application to send and receive messages in real time.',
-         link: 'https://patra.azurewebsites.net/',
-         github: 'https://github.com/rohanshrestha09/patra',
-         images: [PatraImage],
-         icons: [
-            SiMongodb,
-            SiReact,
-            SiTailwindcss,
-            FaNode,
-            SiExpress,
-            SiTypescript,
-         ],
-      },
-      {
-         key: 'blogsansar-v1',
-         name: 'BlogSansar v1',
-         description: `A site that lets you read and create your own blogs.`,
-         link: 'https://blog-nest.vercel.app/',
-         github: 'https://github.com/rohanshrestha09/blog-v1',
-         images: [BlogImage],
-         icons: [
-            SiMongodb,
-            SiReact,
-            SiTailwindcss,
-            FaNode,
-            SiNestjs,
-            SiTypescript,
-         ],
-      },
-      {
-         key: 'instagram',
-         name: 'Instagram Clone',
-         description:
-            'Responsive Instagram Clone made with Next, TypeScript, TailwindCSS',
-         link: 'https://igt.vercel.app/',
-         github: 'https://github.com/rohanshrestha09/instagram-next',
-         images: [InstagramImage],
-         icons: [SiNextdotjs, SiTailwindcss, SiTypescript],
-      },
-      {
-         key: 'discord',
-         name: 'Discord Clone',
-         description: 'Discord Clone done with Figma, TailwindCSS and Jquery',
-         github: 'https://github.com/rohanshrestha09/discord-jquery',
-         link: 'https://discordcl.vercel.app/',
-         images: [DiscordImage],
-         icons: [SiFigma, SiTailwindcss, SiJquery],
-      },
-      {
-         key: 'portfolio',
-         name: 'Portfolio Website',
-         description:
-            'My own portfolio website with Next, daisyui, & TailwindCSS',
-         github: 'https://github.com/rohanshrestha09/portfolio-v2',
-         link: 'https://rohanshrestha.vercel.app/',
-         images: [PortfolioImage],
-         icons: [SiNextdotjs, SiTailwindcss, SiTypescript],
-      },
-   ];
-
    return (
       <Fragment>
          <Head>
@@ -144,15 +43,40 @@ export default function Home() {
             />
 
             <Layout.Content id='about' className='flex flex-col gap-10'>
-               <p className='w-fit text-9xl font-semibold sm:text-5xl'>
-                  About Me
-               </p>
+               <Layout.Header>About Me</Layout.Header>
             </Layout.Content>
 
-            <Layout.Content id='tools' className='flex flex-col gap-10'>
-               <p className='text-center text-9xl font-semibold sm:text-5xl'>
-                  Tools
-               </p>
+            <Layout.Content
+               id='tools'
+               className='flex flex-col gap-[180px] sm:gap-[120px]'
+            >
+               <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
+                  <Layout.Header color='#8FDCC2'>Tools</Layout.Header>
+
+                  <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
+                     Some of the tools I use
+                  </p>
+               </div>
+
+               <div className='grid grid-cols-3 flex-wrap justify-between gap-[150px] sm:flex sm:gap-[130px]'>
+                  {tools.map(({ Icon, name }, index) => (
+                     <div
+                        className='flex flex-1 flex-col items-center gap-[30px] sm:gap-[10px]'
+                        key={name}
+                     >
+                        <span
+                           data-aos={index > 7 ? 'fade-down' : 'fade-up'}
+                           data-aos-duration='800'
+                        >
+                           <Icon className='text-11xl sm:text-7xl' />
+                        </span>
+
+                        <p className='text-5xl font-medium text-[#D5EDE5] sm:text-xl'>
+                           {name}
+                        </p>
+                     </div>
+                  ))}
+               </div>
             </Layout.Content>
 
             <Layout.Content
@@ -160,9 +84,7 @@ export default function Home() {
                className='flex flex-col gap-[180px] sm:gap-[120px]'
             >
                <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
-                  <p className='text-9xl font-semibold text-[#8FDCC2] sm:text-5xl'>
-                     Projects
-                  </p>
+                  <Layout.Header color='#8FDCC2'>Projects</Layout.Header>
 
                   <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
                      Some of the awesome projects I have worked on
@@ -230,7 +152,7 @@ export default function Home() {
                id='contact'
                className='flex flex-col gap-10 text-[#8FDCC2]'
             >
-               <p className='w-fit text-5xl font-medium'>Contact</p>
+               <Layout.Header color='#8FDCC2'>Contact</Layout.Header>
             </Layout.Content>
          </Layout>
       </Fragment>
