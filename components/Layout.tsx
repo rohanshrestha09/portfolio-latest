@@ -1,9 +1,9 @@
 import { Space_Grotesk } from 'next/font/google';
-import particlesConfig from 'particlesjs.config.json';
 import { useEffect, useRef, useState } from 'react';
 import Particle from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine, ISourceOptions } from 'tsparticles-engine';
+import particlesConfig from 'particlesjs.config.json';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 

@@ -2,14 +2,21 @@ import Layout from 'components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { IconType } from 'react-icons';
 import { AiOutlineLink } from 'react-icons/ai';
 import { SiGithub } from 'react-icons/si';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { projects, tools } from 'content';
 
 export default function Home() {
+   useEffect(() => {
+      AOS.init();
+   }, []);
+
    return (
       <Fragment>
          <Head>
@@ -65,7 +72,7 @@ export default function Home() {
                         key={name}
                      >
                         <span
-                           data-aos={index > 7 ? 'fade-down' : 'fade-up'}
+                           data-aos={index >= 6 ? 'fade-down' : 'fade-up'}
                            data-aos-duration='800'
                         >
                            <Icon className='text-11xl sm:text-7xl' />
@@ -91,8 +98,10 @@ export default function Home() {
                   </p>
                </div>
 
-               {projects.map((project) => (
+               {projects.map((project, index) => (
                   <div
+                     data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+                     data-aos-duration='800'
                      key={project.key}
                      className='flex h-fit w-full flex-col gap-[90px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
                   >
