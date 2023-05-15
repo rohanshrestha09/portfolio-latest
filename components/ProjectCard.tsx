@@ -26,16 +26,16 @@ export default function ProjectCard({
 }: Props) {
    return (
       <div
+         className='flex h-fit w-full flex-col gap-[90px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
          data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
          data-aos-duration='700'
-         className='flex h-fit w-full flex-col gap-[90px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
       >
          <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-3/5'>
             <Image
-               priority={false}
-               className='h-auto w-full -translate-y-0 cursor-pointer rounded-md object-cover hover:-translate-y-[83%]'
-               src={images[0]}
                alt='blogsansar'
+               className='h-auto w-full -translate-y-0 cursor-pointer rounded-md object-cover hover:-translate-y-[83%]'
+               priority={false}
+               src={images[0]}
                style={{
                   transition: 'transform 10s ease-in-out 0s',
                }}

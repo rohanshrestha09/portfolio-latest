@@ -1,11 +1,13 @@
-import Layout from 'components/Layout';
 import Head from 'next/head';
 
 import { Fragment, useEffect } from 'react';
 
+import { MdSend } from 'react-icons/md';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+import Layout from 'components/Layout';
 import ContactPill from 'components/ContactPill';
 import ProjectCard from 'components/ProjectCard';
 import { contacts, projects, tools } from 'content';
@@ -30,7 +32,7 @@ export default function Home() {
                   <p className='text-10xl font-semibold text-white sm:text-7xl'>
                      Fullstack Developer
                   </p>
-                  <a href='#about' className='text-5xl sm:text-xl'>
+                  <a className='text-5xl sm:text-xl' href='#about'>
                      <button className='rounded-xl border-[3px] border-white bg-white px-[36px] py-[30px] font-medium text-black transition-all duration-150 hover:bg-inherit hover:text-white sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'>
                         whoami?
                      </button>
@@ -47,27 +49,29 @@ export default function Home() {
                ]}
             />
 
-            <Layout.Content id='about' className='flex flex-col gap-10'>
+            <Layout.Content className='flex flex-col gap-10' id='about'>
                <Layout.Header>About Me</Layout.Header>
             </Layout.Content>
 
             <Layout.Content
-               id='tools'
                className='flex flex-col gap-[180px] sm:gap-[120px]'
+               id='tools'
             >
                <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
                   <Layout.Header color='#8FDCC2'>Tools</Layout.Header>
 
-                  <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
+                  <Layout.SubHeader color='#D5EDE5'>
                      Some of the tools I use
-                  </p>
+                  </Layout.SubHeader>
                </div>
 
                <div className='grid grid-cols-3 flex-wrap justify-between gap-x-[150px] gap-y-[200px] sm:flex sm:gap-[130px]'>
-                  {tools.map(({ Icon, name }, index) => (
-                     <div
-                        className='flex flex-1 flex-col items-center gap-[30px] sm:gap-[10px]'
+                  {tools.map(({ Icon, name, link }, index) => (
+                     <a
                         key={name}
+                        className='flex flex-1 cursor-pointer flex-col items-center gap-[30px] transition-transform duration-300 hover:-translate-y-[6px] sm:gap-[10px]'
+                        href={link}
+                        target='_blank'
                      >
                         <span
                            data-aos={index >= 6 ? 'fade-down' : 'fade-up'}
@@ -79,21 +83,21 @@ export default function Home() {
                         <p className='text-5xl font-medium text-[#D5EDE5] sm:text-xl'>
                            {name}
                         </p>
-                     </div>
+                     </a>
                   ))}
                </div>
             </Layout.Content>
 
             <Layout.Content
-               id='projects'
                className='flex flex-col gap-[180px] sm:gap-[120px]'
+               id='projects'
             >
                <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
                   <Layout.Header color='#8FDCC2'>Projects</Layout.Header>
 
-                  <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
+                  <Layout.SubHeader color='#D5EDE5'>
                      Some of the awesome projects I have worked on
-                  </p>
+                  </Layout.SubHeader>
                </div>
 
                {projects.map((project, index) => (
@@ -102,15 +106,15 @@ export default function Home() {
             </Layout.Content>
 
             <Layout.Content
+               className='flex flex-col gap-[180px] sm:gap-[120px] sm:!pb-0'
                id='contact'
-               className='flex flex-col gap-[180px] sm:gap-[120px]'
             >
                <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
                   <Layout.Header color='#8FDCC2'>Contact</Layout.Header>
 
-                  <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
+                  <Layout.SubHeader color='#D5EDE5'>
                      Get in touch with me
-                  </p>
+                  </Layout.SubHeader>
                </div>
 
                <div className='flex flex-col gap-[40px]'>
@@ -122,6 +126,19 @@ export default function Home() {
                         />
                      </div>
                   ))}
+
+                  <div className='grid grid-cols-3'>
+                     <form className='col-start-3 flex items-center justify-between bg-[#2C483E] py-[100px] sm:rounded-full sm:px-[30px] sm:py-[20px]'>
+                        <input
+                           className='border-none bg-inherit text-6xl text-[#D5EDE5] outline-none placeholder:text-[#D5EDE5] sm:text-2xl'
+                           placeholder='Send a message'
+                        />
+
+                        <button type='submit'>
+                           <MdSend className='text-7xl text-[#D5EDE5] sm:text-3xl' />
+                        </button>
+                     </form>
+                  </div>
                </div>
             </Layout.Content>
          </Layout>

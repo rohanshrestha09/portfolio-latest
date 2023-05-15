@@ -1,22 +1,22 @@
 import {
-   SiGithub,
+   SiDocker,
    SiExpress,
+   SiFigma,
    SiFirebase,
+   SiGithub,
+   SiGmail,
+   SiJquery,
+   SiLinkedin,
    SiMongodb,
+   SiMysql,
+   SiNestjs,
    SiNextdotjs,
+   SiNodedotjs,
+   SiPrisma,
+   SiReact,
    SiRedux,
    SiTailwindcss,
    SiTypescript,
-   SiReact,
-   SiNestjs,
-   SiFigma,
-   SiJquery,
-   SiNodedotjs,
-   SiMysql,
-   SiPrisma,
-   SiDocker,
-   SiLinkedin,
-   SiGmail,
 } from 'react-icons/si';
 
 import { FaNode } from 'react-icons/fa';
@@ -31,18 +31,66 @@ import DiscordImage from 'public/images/discord.png';
 import PortfolioImage from 'public/images/portfolio.png';
 
 export const tools = [
-   { Icon: SiTailwindcss, name: 'Tailwindcss' },
-   { Icon: SiReact, name: 'React' },
-   { Icon: SiNextdotjs, name: 'Next' },
-   { Icon: SiRedux, name: 'Redux' },
-   { Icon: SiTypescript, name: 'TypeScript' },
-   { Icon: SiNodedotjs, name: 'Nodejs' },
-   { Icon: TbBrandGolang, name: 'Go' },
-   { Icon: SiExpress, name: 'Express' },
-   { Icon: SiMongodb, name: 'Mongodb' },
-   { Icon: SiMysql, name: 'MySQL' },
-   { Icon: SiPrisma, name: 'Prisma' },
-   { Icon: SiDocker, name: 'Docker' },
+   {
+      Icon: SiTailwindcss,
+      name: 'Tailwindcss',
+      link: 'https://tailwindcss.com/',
+   },
+   {
+      Icon: SiReact,
+      name: 'React',
+      link: 'https://react.dev/',
+   },
+   {
+      Icon: SiNextdotjs,
+      name: 'Next',
+      link: 'https://nextjs.org/',
+   },
+   {
+      Icon: SiRedux,
+      name: 'Redux',
+      link: 'https://redux.js.org/',
+   },
+   {
+      Icon: SiTypescript,
+      name: 'TypeScript',
+      link: 'https://www.typescriptlang.org/',
+   },
+   {
+      Icon: SiNodedotjs,
+      name: 'Nodejs',
+      link: 'https://nodejs.org/en',
+   },
+   {
+      Icon: TbBrandGolang,
+      name: 'Go',
+      link: 'https://go.dev/',
+   },
+   {
+      Icon: SiExpress,
+      name: 'Express',
+      link: 'https://expressjs.com/',
+   },
+   {
+      Icon: SiMongodb,
+      name: 'Mongodb',
+      link: 'https://www.mongodb.com/',
+   },
+   {
+      Icon: SiMysql,
+      name: 'MySQL',
+      link: 'https://www.mysql.com/',
+   },
+   {
+      Icon: SiPrisma,
+      name: 'Prisma',
+      link: 'https://www.prisma.io/',
+   },
+   {
+      Icon: SiDocker,
+      name: 'Docker',
+      link: 'https://www.docker.com/',
+   },
 ];
 
 export const projects = [

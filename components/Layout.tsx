@@ -109,10 +109,10 @@ function Navbar({ className, items }: Props['Navbar']) {
 
    return (
       <nav
+         ref={navbarRef}
          className={`fixed right-0 top-[55px] z-50 mx-[2.45%] flex gap-[60px] rounded-full bg-transparent px-[55px] py-[35px] sm:top-[35px] sm:gap-[40px] sm:px-[35px] sm:py-[15px] ${
             className ?? ''
          }`}
-         ref={navbarRef}
       >
          {items.map(({ name, target }) => (
             <a
@@ -133,6 +133,18 @@ function Header({ color, children }: Props['Header']) {
    return (
       <p
          className={`text-center text-9xl font-semibold sm:text-5xl ${
+            color && `text-[${color}]`
+         }`}
+      >
+         {children}
+      </p>
+   );
+}
+
+function SubHeader({ color, children }: Props['Header']) {
+   return (
+      <p
+         className={`font-sans text-6xl text-[#D5EDE5] sm:text-2xl ${
             color && `text-[${color}]`
          }`}
       >
@@ -162,8 +174,8 @@ function Particles({ children }: Props['Particles']) {
    return (
       <div className={`${spaceGrotesk.className} relative min-h-screen`}>
          <Particle
-            id='tsparticles'
             className='h-screen w-full'
+            id='tsparticles'
             init={particlesInit}
             options={
                {
@@ -193,6 +205,8 @@ export default function Layout({ className, children }: Props['Layout']) {
 Layout.Navbar = Navbar;
 
 Layout.Header = Header;
+
+Layout.SubHeader = SubHeader;
 
 Layout.Content = Content;
 
