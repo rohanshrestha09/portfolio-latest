@@ -1,16 +1,14 @@
 import Layout from 'components/Layout';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import { Fragment, useEffect } from 'react';
-import { IconType } from 'react-icons';
-import { AiOutlineLink } from 'react-icons/ai';
-import { SiGithub } from 'react-icons/si';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { projects, tools } from 'content';
+import ContactPill from 'components/ContactPill';
+import ProjectCard from 'components/ProjectCard';
+import { contacts, projects, tools } from 'content';
 
 export default function Home() {
    useEffect(() => {
@@ -73,7 +71,7 @@ export default function Home() {
                      >
                         <span
                            data-aos={index >= 6 ? 'fade-down' : 'fade-up'}
-                           data-aos-duration='800'
+                           data-aos-duration='700'
                         >
                            <Icon className='text-11xl sm:text-7xl' />
                         </span>
@@ -99,69 +97,32 @@ export default function Home() {
                </div>
 
                {projects.map((project, index) => (
-                  <div
-                     data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-                     data-aos-duration='800'
-                     key={project.key}
-                     className='flex h-fit w-full flex-col gap-[90px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
-                  >
-                     <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-3/5'>
-                        <Image
-                           className='h-auto w-full -translate-y-0 cursor-pointer rounded-md object-cover hover:-translate-y-[83%]'
-                           src={project.images[0]}
-                           alt='blogsansar'
-                           style={{
-                              transition: 'transform 10s ease-in-out 0s',
-                           }}
-                        />
-                     </div>
-
-                     <div className='relative flex flex-1 flex-col gap-[60px] sm:gap-[20px]'>
-                        <p className='text-8xl font-semibold text-[#8FDCC2] sm:text-4xl'>
-                           {project.name}
-                        </p>
-
-                        <p className='text-6xl/[96px] text-[#D5EDE5] sm:text-2xl'>
-                           {project.description}
-                        </p>
-
-                        <a
-                           className='flex cursor-pointer items-center gap-[10px] text-5xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:text-xl'
-                           href={project.github}
-                           target='_blank'
-                        >
-                           Check Repository{' '}
-                           <SiGithub className='text-5xl sm:text-xl' />
-                        </a>
-
-                        <a
-                           className='flex cursor-pointer items-center gap-[10px] text-5xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:text-xl'
-                           href={project.link}
-                           target='_blank'
-                        >
-                           View Live{' '}
-                           <AiOutlineLink className='text-5xl sm:text-xl' />
-                        </a>
-
-                        <div className='bottom-0 flex gap-[40px] sm:absolute sm:gap-[20px]'>
-                           {project.icons.map((Icon: IconType, index) => (
-                              <Icon
-                                 key={index}
-                                 className='text-6xl text-[#D5EDE5] sm:text-2xl'
-                                 title={Icon.name.slice(2)}
-                              />
-                           ))}
-                        </div>
-                     </div>
-                  </div>
+                  <ProjectCard {...project} key={project.key} index={index} />
                ))}
             </Layout.Content>
 
             <Layout.Content
                id='contact'
-               className='flex flex-col gap-10 text-[#8FDCC2]'
+               className='flex flex-col gap-[180px] sm:gap-[120px]'
             >
-               <Layout.Header color='#8FDCC2'>Contact</Layout.Header>
+               <div className='flex flex-col gap-[40px] text-center sm:gap-[20px]'>
+                  <Layout.Header color='#8FDCC2'>Contact</Layout.Header>
+
+                  <p className='font-sans text-6xl text-[#D5EDE5] sm:text-2xl'>
+                     Get in touch with me
+                  </p>
+               </div>
+
+               <div className='flex flex-col gap-[40px]'>
+                  {contacts.map((contact, index) => (
+                     <div key={contact.title} className='grid grid-cols-3'>
+                        <ContactPill
+                           {...contact}
+                           className={`col-start-${index + 1}`}
+                        />
+                     </div>
+                  ))}
+               </div>
             </Layout.Content>
          </Layout>
       </Fragment>

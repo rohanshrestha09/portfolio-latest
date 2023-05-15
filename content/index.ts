@@ -15,6 +15,8 @@ import {
    SiMysql,
    SiPrisma,
    SiDocker,
+   SiLinkedin,
+   SiGmail,
 } from 'react-icons/si';
 
 import { FaNode } from 'react-icons/fa';
@@ -123,5 +125,26 @@ export const projects = [
       link: 'https://rohanshrestha.vercel.app/',
       images: [PortfolioImage],
       icons: [SiNextdotjs, SiTailwindcss, SiTypescript],
+   },
+];
+
+export const contacts = [
+   {
+      title: 'Gmail',
+      link: 'mailto:rohanshrestha.dev@gmail.com',
+      description: 'rohanshrestha.dev@gmail.com',
+      Icon: SiGmail,
+   },
+   {
+      title: 'Linkedin',
+      link: 'https://www.linkedin.com/in/rohan-shrestha-9b5580232',
+      description: 'Rohan Shrestha',
+      Icon: SiLinkedin,
+   },
+   {
+      title: 'Github',
+      link: 'https://www.github.com/rohanshrestha09',
+      description: 'rohanshrestha09',
+      Icon: SiGithub,
    },
 ];
