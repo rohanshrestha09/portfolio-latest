@@ -25,10 +25,10 @@ export default function ContactPill({
          target='_blank'
       >
          <div className='flex cursor-pointer flex-col items-center gap-[60px] bg-[#2C483E] py-[100px] transition-transform duration-300 hover:-translate-y-[6px] hover:scale-[1.02] sm:flex-row sm:gap-[25px] sm:rounded-full sm:px-[25px] sm:py-[15px]'>
-            <Icon className='text-9xl text-[#D5EDE5] sm:text-5xl' />
+            <Icon className='text-10xl text-[#D5EDE5] sm:text-5xl' />
             <div className='flex flex-col items-center gap-[15px] sm:items-start sm:gap-[2px]'>
-               <p className='text-6xl text-[#D5EDE5] sm:text-2xl'>{title}</p>
-               <p className='text-5xl font-medium text-[#8FDCC2] sm:text-xl'>
+               <p className='text-7xl text-[#D5EDE5] sm:text-2xl'>{title}</p>
+               <p className='text-6xl font-medium text-[#8FDCC2] sm:text-xl'>
                   {description}
                </p>
             </div>

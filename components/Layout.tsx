@@ -42,11 +42,9 @@ function Navbar({ className, items }: Props['Navbar']) {
 
       const MAX_SCROLL = document.documentElement.clientHeight;
 
-      const MOBILE_RIGHT = 21.3803,
-         DESKTOP_RIGHT = 34.9342;
+      const RIGHT = 34.9342;
 
-      const MOBILE_DIV = MAX_SCROLL / MOBILE_RIGHT,
-         DESKTOP_DIV = MAX_SCROLL / DESKTOP_RIGHT;
+      const DIV = MAX_SCROLL / RIGHT;
 
       window.onscroll = function () {
          if (!navbarRef.current) return;
@@ -65,22 +63,19 @@ function Navbar({ className, items }: Props['Navbar']) {
                'navbar'
             );
 
-         if (currentScroll > 0 && lastScroll <= currentScroll) {
-            lastScroll = currentScroll;
+         if (!isMobile) {
+            if (currentScroll > 0 && lastScroll <= currentScroll) {
+               lastScroll = currentScroll;
 
-            if (currentScroll < MAX_SCROLL)
-               navbarRef.current.style.right =
-                  currentScroll / (isMobile ? MOBILE_DIV : DESKTOP_DIV) + '%';
-            else
-               navbarRef.current.style.right = isMobile
-                  ? `${MOBILE_RIGHT}%`
-                  : `${DESKTOP_RIGHT}%`;
-         } else {
-            lastScroll = currentScroll;
+               if (currentScroll < MAX_SCROLL)
+                  navbarRef.current.style.right = currentScroll / DIV + '%';
+               else navbarRef.current.style.right = `${RIGHT}%`;
+            } else {
+               lastScroll = currentScroll;
 
-            if (currentScroll < MAX_SCROLL)
-               navbarRef.current.style.right =
-                  currentScroll / (isMobile ? MOBILE_DIV : DESKTOP_DIV) + '%';
+               if (currentScroll < MAX_SCROLL)
+                  navbarRef.current.style.right = currentScroll / DIV + '%';
+            }
          }
 
          switch (true) {
@@ -110,14 +105,14 @@ function Navbar({ className, items }: Props['Navbar']) {
    return (
       <nav
          ref={navbarRef}
-         className={`fixed right-0 top-[55px] z-50 mx-[2.45%] flex gap-[60px] rounded-full bg-transparent px-[55px] py-[35px] sm:top-[35px] sm:gap-[40px] sm:px-[35px] sm:py-[15px] ${
+         className={`sticky top-[85px] z-50 mx-auto my-0 flex w-fit gap-[90px] rounded-full bg-transparent px-[65px] py-[45px] sm:fixed sm:right-0 sm:top-[35px] sm:mx-[2.45%] sm:gap-[40px] sm:px-[35px] sm:py-[15px] ${
             className ?? ''
          }`}
       >
          {items.map(({ name, target }) => (
             <a
                key={name}
-               className={`relative cursor-pointer pb-[18px] text-5xl font-semibold after:absolute after:bottom-0 after:right-0 after:h-[6px] after:bg-white after:transition-all after:duration-200 after:content-[""] hover:after:w-3/4 sm:pb-[4px] sm:text-xl sm:after:h-[2.5px] ${
+               className={`relative cursor-pointer pb-[18px] text-6xl font-semibold after:absolute after:bottom-0 after:right-0 after:h-[6px] after:bg-white after:transition-all after:duration-200 after:content-[""] hover:after:w-3/4 sm:pb-[4px] sm:text-xl sm:after:h-[2.5px] ${
                   path === target ? 'after:w-3/4' : 'after:w-0'
                }`}
                href={`#${target}`}
@@ -132,7 +127,7 @@ function Navbar({ className, items }: Props['Navbar']) {
 function Header({ color, children }: Props['Header']) {
    return (
       <p
-         className={`text-center text-9xl font-semibold sm:text-5xl ${
+         className={`text-center text-10xl font-semibold sm:text-5xl ${
             color && `text-[${color}]`
          }`}
       >
@@ -144,7 +139,7 @@ function Header({ color, children }: Props['Header']) {
 function SubHeader({ color, children }: Props['Header']) {
    return (
       <p
-         className={`font-sans text-6xl text-[#D5EDE5] sm:text-2xl ${
+         className={`font-sans text-7xl text-[#D5EDE5] sm:text-2xl ${
             color && `text-[${color}]`
          }`}
       >
@@ -174,7 +169,7 @@ function Particles({ children }: Props['Particles']) {
    return (
       <div className={`${spaceGrotesk.className} relative min-h-screen`}>
          <Particle
-            className='h-screen w-full'
+            className='hidden h-screen w-full sm:block'
             id='tsparticles'
             init={particlesInit}
             options={

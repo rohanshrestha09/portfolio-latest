@@ -26,7 +26,7 @@ export default function ProjectCard({
 }: Props) {
    return (
       <div
-         className='flex h-fit w-full flex-col gap-[90px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
+         className='flex h-fit w-full flex-col gap-[100px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
          data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
          data-aos-duration='700'
       >
@@ -42,36 +42,36 @@ export default function ProjectCard({
             />
          </div>
 
-         <div className='relative flex flex-1 flex-col gap-[60px] sm:gap-[20px]'>
-            <p className='text-8xl font-semibold text-[#8FDCC2] sm:text-4xl'>
+         <div className='relative flex flex-1 flex-col gap-[70px] sm:gap-[20px]'>
+            <p className='text-9xl font-semibold text-[#8FDCC2] sm:text-4xl'>
                {name}
             </p>
 
-            <p className='text-6xl/[96px] text-[#D5EDE5] sm:text-2xl'>
+            <p className='text-7xl/[96px] text-[#D5EDE5] sm:text-2xl'>
                {description}
             </p>
 
             <a
-               className='flex cursor-pointer items-center gap-[10px] text-5xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:text-xl'
+               className='flex cursor-pointer items-center gap-[20px] text-6xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:gap-[10px] sm:text-xl'
                href={github}
                target='_blank'
             >
-               Check Repository <SiGithub className='text-5xl sm:text-xl' />
+               Check Repository <SiGithub className='text-6xl sm:text-xl' />
             </a>
 
             <a
-               className='flex cursor-pointer items-center gap-[10px] text-5xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:text-xl'
+               className='flex cursor-pointer items-center gap-[20px] text-6xl font-medium text-[#8FDCC2] transition-all hover:text-[#D5EDE5] sm:gap-[10px] sm:text-xl'
                href={link}
                target='_blank'
             >
-               View Live <AiOutlineLink className='text-5xl sm:text-xl' />
+               View Live <AiOutlineLink className='text-6xl sm:text-xl' />
             </a>
 
-            <div className='bottom-0 flex gap-[40px] sm:absolute sm:gap-[20px]'>
+            <div className='bottom-0 flex gap-[50px] sm:absolute sm:gap-[20px]'>
                {icons.map((Icon: IconType, index) => (
                   <Icon
                      key={index}
-                     className='text-6xl text-[#D5EDE5] sm:text-2xl'
+                     className='text-7xl text-[#D5EDE5] sm:text-2xl'
                      title={Icon.name.slice(2)}
                   />
                ))}
