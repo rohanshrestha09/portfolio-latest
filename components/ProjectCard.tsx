@@ -32,6 +32,7 @@ export default function ProjectCard({
       >
          <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-3/5'>
             <Image
+               priority={false}
                className='h-auto w-full -translate-y-0 cursor-pointer rounded-md object-cover hover:-translate-y-[83%]'
                src={images[0]}
                alt='blogsansar'

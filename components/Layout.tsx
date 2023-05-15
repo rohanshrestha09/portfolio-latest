@@ -144,7 +144,7 @@ function Header({ color, children }: Props['Header']) {
 function Content({ className, children, ...props }: Props['Content']) {
    return (
       <section
-         className={`min-h-screen px-[100px] py-[310px] xl:px-[250px] xl:py-[180px] ${
+         className={`min-h-screen px-[100px] py-[400px] sm:px-[250px] sm:py-[180px] ${
             className ?? ''
          }`}
          {...props}

@@ -1,7 +1,8 @@
+import { CSSProperties } from 'react';
 import { IconType } from 'react-icons';
 
 interface Props {
-   className: string;
+   style: CSSProperties;
    title: string;
    link: string;
    description: string;
@@ -9,7 +10,7 @@ interface Props {
 }
 
 export default function ContactPill({
-   className,
+   style,
    title,
    link,
    description,
@@ -19,7 +20,8 @@ export default function ContactPill({
       <div
          data-aos='fade-down'
          data-aos-duration='700'
-         className={`flex items-center gap-[25px] rounded-full bg-[#2C483E] px-[25px] py-[15px] ${className}`}
+         className='flex items-center gap-[25px] rounded-full bg-[#2C483E] px-[25px] py-[15px]'
+         style={style}
       >
          <Icon className='text-9xl text-[#D5EDE5] sm:text-5xl' />
          <div className='flex flex-col gap-[2px]'>

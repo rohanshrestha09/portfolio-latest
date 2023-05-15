@@ -63,7 +63,7 @@ export default function Home() {
                   </p>
                </div>
 
-               <div className='grid grid-cols-3 flex-wrap justify-between gap-[150px] sm:flex sm:gap-[130px]'>
+               <div className='grid grid-cols-3 flex-wrap justify-between gap-x-[150px] gap-y-[200px] sm:flex sm:gap-[130px]'>
                   {tools.map(({ Icon, name }, index) => (
                      <div
                         className='flex flex-1 flex-col items-center gap-[30px] sm:gap-[10px]'
@@ -118,7 +118,7 @@ export default function Home() {
                      <div key={contact.title} className='grid grid-cols-3'>
                         <ContactPill
                            {...contact}
-                           className={`col-start-${index + 1}`}
+                           style={{ gridColumnStart: index + 1 }}
                         />
                      </div>
                   ))}
