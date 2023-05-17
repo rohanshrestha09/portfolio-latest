@@ -1,5 +1,6 @@
 import { Space_Grotesk } from 'next/font/google';
 import { useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
 import Particle from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine, ISourceOptions } from 'tsparticles-engine';
@@ -105,16 +106,22 @@ function Navbar({ className, items }: Props['Navbar']) {
    return (
       <nav
          ref={navbarRef}
-         className={`sticky top-[85px] z-50 mx-auto my-0 flex w-fit gap-[90px] rounded-full bg-transparent px-[65px] py-[45px] sm:fixed sm:right-0 sm:top-[35px] sm:mx-[2.45%] sm:gap-[40px] sm:px-[35px] sm:py-[15px] ${
-            className ?? ''
-         }`}
+         className={classNames(
+            'sticky top-[85px] z-50 mx-auto my-0 flex w-fit gap-[90px] rounded-full bg-transparent px-[65px] py-[45px]',
+            'sm:fixed sm:right-0 sm:top-[35px] sm:mx-[2.45%] sm:gap-[40px] sm:px-[35px] sm:py-[15px]',
+            className
+         )}
       >
          {items.map(({ name, target }) => (
             <a
                key={name}
-               className={`relative cursor-pointer pb-[18px] text-6xl font-semibold after:absolute after:bottom-0 after:right-0 after:h-[6px] after:bg-white after:transition-all after:duration-200 after:content-[""] hover:after:w-3/4 sm:pb-[4px] sm:text-xl sm:after:h-[2.5px] ${
+               className={classNames(
+                  'relative cursor-pointer pb-[24px] text-6xl font-semibold',
+                  'after:absolute after:bottom-0 after:right-0 after:h-[10px] after:bg-white after:transition-all after:duration-200 after:content-[""]',
+                  'sm:pb-[4px] sm:text-xl sm:after:h-[2.5px]',
+                  'hover:after:w-3/4',
                   path === target ? 'after:w-3/4' : 'after:w-0'
-               }`}
+               )}
                href={`#${target}`}
             >
                {name}
@@ -127,9 +134,11 @@ function Navbar({ className, items }: Props['Navbar']) {
 function Header({ color, children }: Props['Header']) {
    return (
       <p
-         className={`text-center text-10xl font-semibold sm:text-5xl ${
+         className={classNames(
+            'text-center text-10xl font-semibold',
+            'sm:text-5xl',
             color && `text-[${color}]`
-         }`}
+         )}
       >
          {children}
       </p>
@@ -139,9 +148,11 @@ function Header({ color, children }: Props['Header']) {
 function SubHeader({ color, children }: Props['Header']) {
    return (
       <p
-         className={`font-sans text-7xl text-[#D5EDE5] sm:text-2xl ${
+         className={classNames(
+            'font-sans text-7xl text-[#D5EDE5]',
+            'sm:text-2xl',
             color && `text-[${color}]`
-         }`}
+         )}
       >
          {children}
       </p>
@@ -151,9 +162,11 @@ function SubHeader({ color, children }: Props['Header']) {
 function Content({ className, children, ...props }: Props['Content']) {
    return (
       <section
-         className={`min-h-screen px-[100px] py-[400px] sm:px-[250px] sm:py-[180px] ${
-            className ?? ''
-         }`}
+         className={classNames(
+            'min-h-screen px-[100px] py-[400px]',
+            'sm:px-[250px] sm:py-[180px]',
+            className
+         )}
          {...props}
       >
          {children}

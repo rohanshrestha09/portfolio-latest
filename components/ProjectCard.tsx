@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 
+import classNames from 'classnames';
+
 import { SiGithub } from 'react-icons/si';
 import { AiOutlineLink } from 'react-icons/ai';
 
@@ -26,19 +28,23 @@ export default function ProjectCard({
 }: Props) {
    return (
       <div
-         className='flex h-fit w-full flex-col gap-[100px] sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
+         className={classNames(
+            'flex h-fit w-full flex-col gap-[100px]',
+            'sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
+         )}
          data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
          data-aos-duration='700'
       >
          <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-3/5'>
             <Image
                alt='blogsansar'
-               className='h-auto w-full -translate-y-0 cursor-pointer rounded-md object-cover hover:-translate-y-[83%]'
+               className={classNames(
+                  'h-auto w-full cursor-pointer rounded-md object-cover',
+                  images[0].height > 1080 &&
+                     '-translate-y-0 transition-transform delay-0 duration-[10s] ease-in-out hover:-translate-y-[85%]'
+               )}
                priority={false}
                src={images[0]}
-               style={{
-                  transition: 'transform 10s ease-in-out 0s',
-               }}
             />
          </div>
 

@@ -2,6 +2,8 @@ import Head from 'next/head';
 
 import { Fragment, useEffect } from 'react';
 
+import classNames from 'classnames';
+
 import { MdSend } from 'react-icons/md';
 
 import AOS from 'aos';
@@ -10,6 +12,7 @@ import 'aos/dist/aos.css';
 import Layout from 'components/Layout';
 import ContactPill from 'components/ContactPill';
 import ProjectCard from 'components/ProjectCard';
+import ContactPopup from 'components/ContactPopup';
 import { contacts, projects, tools } from 'content';
 
 export default function Home() {
@@ -42,7 +45,13 @@ export default function Home() {
                      Fullstack Developer
                   </p>
                   <a className='text-6xl sm:text-xl' href='#about'>
-                     <button className='rounded-xl border-[3px] border-white bg-white px-[36px] py-[30px] font-medium text-black transition-all duration-150 hover:bg-inherit hover:text-white sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'>
+                     <button
+                        className={classNames(
+                           'rounded-xl border-[3px] border-white bg-white px-[46px] py-[40px] font-medium text-black transition-all duration-150',
+                           'hover:bg-inherit hover:text-white',
+                           'sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'
+                        )}
+                     >
                         whoami?
                      </button>
                   </a>
@@ -106,7 +115,7 @@ export default function Home() {
             </Layout.Content>
 
             <Layout.Content
-               className='flex flex-col gap-[190px] !pb-0 sm:gap-[120px]'
+               className='relative flex flex-col gap-[190px] !pb-0 sm:gap-[100px]'
                id='contact'
             >
                <div className='flex flex-col gap-[50px] text-center sm:gap-[20px]'>
@@ -128,11 +137,27 @@ export default function Home() {
                   ))}
 
                   <div className='grid grid-cols-3'>
-                     <div className='col-start-3 flex cursor-pointer items-center justify-between bg-[#2C483E] py-[100px] text-[#D5EDE5] transition-colors hover:bg-[#8FDCC2] hover:text-[hsla(158,23%,18%,1)] sm:rounded-full sm:px-[30px] sm:py-[20px]'>
-                        <p className='text-6xl sm:text-2xl'>Send a message</p>
+                     <ContactPopup className='col-start-3'>
+                        {(isPopupOpen, openPopup) => (
+                           <button
+                              className={classNames(
+                                 'flex w-full items-center justify-between py-[100px] transition-colors',
+                                 'hover:bg-[#8FDCC2] hover:text-[#233831]',
+                                 'sm:rounded-full sm:px-[30px] sm:py-[20px]',
+                                 isPopupOpen
+                                    ? 'bg-[#8FDCC2] text-[#233831]'
+                                    : 'bg-[#2C483E] text-[#D5EDE5]'
+                              )}
+                              onClick={openPopup}
+                           >
+                              <p className='text-6xl sm:text-2xl'>
+                                 Leave a message
+                              </p>
 
-                        <MdSend className='text-7xl sm:text-3xl' />
-                     </div>
+                              <MdSend className='text-7xl sm:text-3xl' />
+                           </button>
+                        )}
+                     </ContactPopup>
                   </div>
                </div>
             </Layout.Content>
