@@ -10,10 +10,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import Layout from 'components/Layout';
+import Experience from 'components/ExperienceCard';
 import ContactPill from 'components/ContactPill';
 import ProjectCard from 'components/ProjectCard';
 import ContactPopup from 'components/ContactPopup';
-import { contacts, projects, tools } from 'content';
+import { contacts, educations, experiences, projects, tools } from 'content';
 
 export default function Home() {
    useEffect(() => {
@@ -58,8 +59,29 @@ export default function Home() {
                </Layout.Content>
             </Layout.Particles>
 
-            <Layout.Content className='flex flex-col gap-10' id='about'>
-               <Layout.Header>About Me</Layout.Header>
+            <Layout.Content
+               className='flex flex-col gap-[190px] sm:gap-[90px]'
+               id='about'
+            >
+               <div className='flex flex-col gap-[80px] sm:gap-[30px]'>
+                  <Layout.SubHeader>Work Experience</Layout.SubHeader>
+
+                  <Experience>
+                     {experiences.map((experience) => (
+                        <Experience.Card {...experience} key={experience.key} />
+                     ))}
+                  </Experience>
+               </div>
+
+               <div className='flex flex-col gap-[30px]'>
+                  <Layout.SubHeader>Education</Layout.SubHeader>
+
+                  <Experience>
+                     {educations.map((education) => (
+                        <Experience.Card {...education} key={education.key} />
+                     ))}
+                  </Experience>
+               </div>
             </Layout.Content>
 
             <Layout.Content

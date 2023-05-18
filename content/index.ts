@@ -98,7 +98,7 @@ export const projects = [
       key: 'blogsansar',
       name: 'BlogSansar',
       description:
-         'BlogSansar is a web platform which allows users to write their own blogs and share it with others.',
+         'BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.',
       link: 'https://blogsansar.live',
       github: 'https://github.com/rohanshrestha09/blog-express',
       images: [BlogSansarImage],
@@ -117,7 +117,7 @@ export const projects = [
       key: 'patra',
       name: 'Patra',
       description:
-         'A realtime messaging web application to send and receive messages in real time.',
+         'A web application that enables instant messaging, allowing users to send and receive messages in real time.',
       link: 'https://patra.azurewebsites.net/',
       github: 'https://github.com/rohanshrestha09/patra',
       images: [PatraImage],
@@ -194,5 +194,45 @@ export const contacts = [
       link: 'https://www.github.com/rohanshrestha09',
       description: 'rohanshrestha09',
       Icon: SiGithub,
+   },
+];
+
+export const experiences = [
+   {
+      key: 'dallotech',
+      description:
+         'In my current role at Dallotech, I work as a full-time frontend developer. My responsibilities include developing interactive user interfaces and integrating complex functionality. I utilize a combination of technologies such as Next.js, Tailwind CSS, Ant Design, and Redux.',
+      endDate: 'Present',
+      link: 'https://dallotech.com',
+      startDate: 'Sept 2022',
+      subtitle: 'Dallotech Pvt. Ltd.',
+      title: 'Frontend Developer',
+   },
+   {
+      key: 'rasan',
+      description:
+         'During my time as a freelance frontend developer, I developed the Rasan Admin Panel. This platform efficiently handles and organizes a large number of inventory, orders, and products.',
+      endDate: 'Sept 2022',
+      link: 'https://admin.rasan.com.np',
+      startDate: 'July 2022',
+      subtitle: 'Rasan',
+      title: 'Frontend Developer (Freelancing)',
+   },
+];
+
+export const educations = [
+   {
+      key: 'ncit',
+      endDate: 'Present',
+      startDate: 'Apr 2021',
+      subtitle: 'Nepal College of Information Technology (NCIT)',
+      title: 'University Level',
+   },
+   {
+      key: 'omega',
+      endDate: 'Mar 2020',
+      startDate: 'June 2018',
+      subtitle: "Omega Int'l College",
+      title: 'High School',
    },
 ];

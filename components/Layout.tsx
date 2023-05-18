@@ -47,7 +47,7 @@ function Navbar({ className, items }: Props['Navbar']) {
 
       const DIV = MAX_SCROLL / RIGHT;
 
-      window.onscroll = function () {
+      const handleScroll = () => {
          if (!navbarRef.current) return;
 
          const currentScroll =
@@ -78,28 +78,37 @@ function Navbar({ className, items }: Props['Navbar']) {
                   navbarRef.current.style.right = currentScroll / DIV + '%';
             }
          }
+      };
 
-         switch (true) {
-            case currentScroll >= 0 && currentScroll <= MAX_SCROLL:
-               setPath('about');
-               break;
+      window.addEventListener('scroll', handleScroll);
 
-            case currentScroll > MAX_SCROLL && currentScroll <= MAX_SCROLL * 2:
-               navbarRef.current.classList.remove('text-[#D5EDE5]');
-               setPath('tools');
-               break;
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, []);
 
-            case currentScroll > MAX_SCROLL * 2 &&
-               currentScroll <= MAX_SCROLL * (isMobile ? 5 : 6):
-               navbarRef.current.classList.add('text-[#D5EDE5]');
-               setPath('projects');
-               break;
+   useEffect(() => {
+      const handleScroll = () => {
+         const scrollPosition = window.scrollY;
 
-            case currentScroll > MAX_SCROLL * (isMobile ? 5 : 6) &&
-               currentScroll <= MAX_SCROLL * (isMobile ? 6 : 7):
-               setPath('contact');
-               break;
-         }
+         const sections = document.querySelectorAll('section');
+
+         sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+
+            if (
+               scrollPosition >= sectionTop &&
+               scrollPosition < sectionTop + sectionHeight
+            )
+               setPath(section.id);
+         });
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
       };
    }, []);
 
@@ -145,9 +154,10 @@ function Header({ color, children }: Props['Header']) {
    );
 }
 
-function SubHeader({ color, children }: Props['Header']) {
+function SubHeader({ color, children, ...props }: Props['Header']) {
    return (
       <p
+         {...props}
          className={classNames(
             'font-sans text-7xl text-[#D5EDE5]',
             'sm:text-2xl',
