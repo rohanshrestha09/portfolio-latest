@@ -53,18 +53,42 @@ export default function Home() {
                            'sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'
                         )}
                      >
-                        whoami?
+                        Download CV
                      </button>
                   </a>
                </Layout.Content>
             </Layout.Particles>
 
+            <ContactPopup className='fixed bottom-[40px] right-[40px] z-[1000]'>
+               {(isPopupOpen, openPopup) => (
+                  <button
+                     className={classNames(
+                        'transition-colors',
+                        'hover:bg-[#8FDCC2] hover:text-[#233831]',
+                        'sm:rounded-full sm:p-[20px]',
+                        isPopupOpen
+                           ? 'bg-[#8FDCC2] text-[#233831]'
+                           : 'bg-[#2C483E] text-[#D5EDE5]'
+                     )}
+                     onClick={openPopup}
+                  >
+                     <MdSend className='text-6xl sm:text-xl' />
+                  </button>
+               )}
+            </ContactPopup>
+
             <Layout.Content
-               className='flex flex-col gap-[190px] sm:gap-[90px]'
+               className='flex flex-col gap-[300px] sm:gap-[90px]'
                id='about'
             >
-               <div className='flex flex-col gap-[80px] sm:gap-[30px]'>
-                  <Layout.SubHeader>Work Experience</Layout.SubHeader>
+               <div
+                  className='flex flex-col gap-[120px] sm:gap-[60px]'
+                  data-aos='fade-up'
+                  data-aos-duration='700'
+               >
+                  <Layout.Header centered={false}>
+                     Work Experience
+                  </Layout.Header>
 
                   <Experience>
                      {experiences.map((experience) => (
@@ -73,8 +97,12 @@ export default function Home() {
                   </Experience>
                </div>
 
-               <div className='flex flex-col gap-[30px]'>
-                  <Layout.SubHeader>Education</Layout.SubHeader>
+               <div
+                  className='flex flex-col gap-[120px] sm:gap-[60px]'
+                  data-aos='fade-up'
+                  data-aos-duration='700'
+               >
+                  <Layout.Header centered={false}>Education</Layout.Header>
 
                   <Experience>
                      {educations.map((education) => (
@@ -137,7 +165,7 @@ export default function Home() {
             </Layout.Content>
 
             <Layout.Content
-               className='relative flex flex-col gap-[190px] !pb-0 sm:gap-[100px]'
+               className='relative flex flex-col gap-[190px] sm:gap-[100px]'
                id='contact'
             >
                <div className='flex flex-col gap-[50px] text-center sm:gap-[20px]'>
@@ -157,30 +185,6 @@ export default function Home() {
                         />
                      </div>
                   ))}
-
-                  <div className='grid grid-cols-3'>
-                     <ContactPopup className='col-start-3'>
-                        {(isPopupOpen, openPopup) => (
-                           <button
-                              className={classNames(
-                                 'flex w-full items-center justify-between py-[100px] transition-colors',
-                                 'hover:bg-[#8FDCC2] hover:text-[#233831]',
-                                 'sm:rounded-full sm:px-[30px] sm:py-[20px]',
-                                 isPopupOpen
-                                    ? 'bg-[#8FDCC2] text-[#233831]'
-                                    : 'bg-[#2C483E] text-[#D5EDE5]'
-                              )}
-                              onClick={openPopup}
-                           >
-                              <p className='text-6xl sm:text-2xl'>
-                                 Leave a message
-                              </p>
-
-                              <MdSend className='text-7xl sm:text-3xl' />
-                           </button>
-                        )}
-                     </ContactPopup>
-                  </div>
                </div>
             </Layout.Content>
          </Layout>

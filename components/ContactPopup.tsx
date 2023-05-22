@@ -80,7 +80,7 @@ export default function ContactPopup({ className, children }: Props) {
       <div className={classNames(className)}>
          <div
             className={classNames(
-               'absolute bottom-[120px] right-[120px] z-[100] flex w-4/5 flex-col gap-[100px] overflow-hidden rounded-2xl border-[2px] border-[#8FDCC2] bg-[#2C483E] transition-all duration-500',
+               'absolute bottom-[120px] right-[120px] z-[100] flex w-4/5 flex-col gap-[100px] overflow-hidden rounded-2xl border-[2px] border-none bg-[rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-500',
                'sm:bottom-[80px] sm:right-[80px] sm:w-[580px] sm:gap-[35px] sm:rounded-lg',
                isPopupOpen ? 'visible h-[70%] sm:h-[770px]' : 'invisible h-0'
             )}
@@ -144,7 +144,7 @@ export default function ContactPopup({ className, children }: Props) {
                <button
                   className={classNames(
                      'flex w-full items-center justify-between rounded-2xl border border-[#8FDCC2] bg-[#8FDCC2] px-[70px] py-[60px] text-[#233831] transition-colors',
-                     'hover:bg-[#2C483E] hover:text-[#D5EDE5]',
+                     'hover:bg-[rgba(0,0,0,0.1)] hover:text-[#D5EDE5] hover:backdrop-blur-md',
                      'sm:rounded-lg sm:px-[30px] sm:py-[20px]',
                      isLoading &&
                         '!border-[rgba(143,220,194,.8)] !bg-[rgba(143,220,194,.8)] !text-[rgba(35,56,49,.8)]'

@@ -29,7 +29,7 @@ export default function TextArea({
          </label>
          <textarea
             className={classNames(
-               'block w-full rounded-2xl border border-[#D5EDE5] bg-[#2C483E] p-[40px] text-6xl text-[#D5EDE5] outline-none transition-colors',
+               'block w-full rounded-2xl border border-[#D5EDE5] bg-[rgba(0,0,0,0.1)] p-[40px] text-6xl text-[#D5EDE5] outline-none backdrop-blur transition-colors',
                'focus:border-[#8FDCC2] focus:ring-[#8FDCC2]',
                'sm:rounded-lg sm:p-[10px] sm:text-xl'
             )}

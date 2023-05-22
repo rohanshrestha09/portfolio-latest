@@ -211,7 +211,7 @@ export const experiences = [
    {
       key: 'rasan',
       description:
-         'During my time as a freelance frontend developer, I developed the Rasan Admin Panel. This platform efficiently handles and organizes a large number of inventory, orders, and products.',
+         'During my time as a freelance frontend developer, I developed the Rasan Admin Panel. This platform efficiently handles and organizes a large number of inventory, orders, and products. This project was built with React, Tailwind CSS, and React Query.',
       endDate: 'Sept 2022',
       link: 'https://admin.rasan.com.np',
       startDate: 'July 2022',

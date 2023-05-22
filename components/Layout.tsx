@@ -15,6 +15,7 @@ interface Props {
    };
    Header: {
       color?: string;
+      centered?: boolean;
       children: React.ReactNode;
    };
    Content: {
@@ -140,13 +141,14 @@ function Navbar({ className, items }: Props['Navbar']) {
    );
 }
 
-function Header({ color, children }: Props['Header']) {
+function Header({ color, centered = true, children }: Props['Header']) {
    return (
       <p
          className={classNames(
-            'text-center text-10xl font-semibold',
+            'text-10xl font-semibold',
             'sm:text-5xl',
-            color && `text-[${color}]`
+            color && `text-[${color}]`,
+            centered && 'text-center'
          )}
       >
          {children}
@@ -159,7 +161,7 @@ function SubHeader({ color, children, ...props }: Props['Header']) {
       <p
          {...props}
          className={classNames(
-            'font-sans text-7xl text-[#D5EDE5]',
+            'text-7xl text-[#D5EDE5]',
             'sm:text-2xl',
             color && `text-[${color}]`
          )}
@@ -173,8 +175,8 @@ function Content({ className, children, ...props }: Props['Content']) {
    return (
       <section
          className={classNames(
-            'min-h-screen px-[100px] py-[400px]',
-            'sm:px-[250px] sm:py-[180px]',
+            'min-h-screen px-[100px] pt-[400px]',
+            'sm:px-[250px] sm:pt-[180px]',
             className
          )}
          {...props}
