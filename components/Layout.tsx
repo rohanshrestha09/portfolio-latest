@@ -90,7 +90,7 @@ function Navbar({ className, items }: Props['Navbar']) {
 
    useEffect(() => {
       const handleScroll = () => {
-         const scrollPosition = window.scrollY;
+         const scrollPosition = window.scrollY + 5;
 
          const sections = document.querySelectorAll('section');
 
@@ -175,8 +175,8 @@ function Content({ className, children, ...props }: Props['Content']) {
    return (
       <section
          className={classNames(
-            'min-h-screen px-[100px] pt-[400px]',
-            'sm:px-[250px] sm:pt-[180px]',
+            'min-h-screen px-[100px] pb-[30px] pt-[400px]',
+            'sm:px-[250px] sm:pb-[10px] sm:pt-[180px]',
             className
          )}
          {...props}

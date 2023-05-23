@@ -59,13 +59,13 @@ export default function Home() {
                </Layout.Content>
             </Layout.Particles>
 
-            <ContactPopup className='fixed bottom-[40px] right-[40px] z-[1000]'>
+            <ContactPopup className='fixed bottom-[100px] right-[100px] z-[1000] sm:bottom-[40px] sm:right-[40px]'>
                {(isPopupOpen, openPopup) => (
                   <button
                      className={classNames(
-                        'transition-colors',
+                        'rounded-full p-[60px] transition-colors',
                         'hover:bg-[#8FDCC2] hover:text-[#233831]',
-                        'sm:rounded-full sm:p-[20px]',
+                        'sm:p-[20px]',
                         isPopupOpen
                            ? 'bg-[#8FDCC2] text-[#233831]'
                            : 'bg-[#2C483E] text-[#D5EDE5]'
@@ -178,7 +178,7 @@ export default function Home() {
 
                <div className='flex flex-col gap-[80px] sm:gap-[40px]'>
                   {contacts.map((contact, index) => (
-                     <div key={contact.title} className='grid grid-cols-3'>
+                     <div key={contact.title} className='grid-cols-3 sm:grid'>
                         <ContactPill
                            {...contact}
                            style={{ gridColumnStart: index + 1 }}

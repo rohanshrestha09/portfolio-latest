@@ -80,9 +80,9 @@ export default function ContactPopup({ className, children }: Props) {
       <div className={classNames(className)}>
          <div
             className={classNames(
-               'absolute bottom-[120px] right-[120px] z-[100] flex w-4/5 flex-col gap-[100px] overflow-hidden rounded-2xl border-[2px] border-none bg-[rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-500',
+               'absolute bottom-[120px] right-[120px] z-[100] flex w-[80vw] flex-col gap-[100px] overflow-hidden rounded-2xl border-[2px] border-none bg-[rgba(0,0,0,0.1)] backdrop-blur-md transition-all duration-500',
                'sm:bottom-[80px] sm:right-[80px] sm:w-[580px] sm:gap-[35px] sm:rounded-lg',
-               isPopupOpen ? 'visible h-[70%] sm:h-[770px]' : 'invisible h-0'
+               isPopupOpen ? 'visible h-[70vh] sm:h-[770px]' : 'invisible h-0'
             )}
          >
             <div
