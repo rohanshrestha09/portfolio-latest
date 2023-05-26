@@ -39,13 +39,17 @@ export default function Home() {
 
             <Layout.Particles>
                <Layout.Content className='absolute left-1/2 top-1/2 flex !h-fit !min-h-fit -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[80px] !p-0 sm:gap-[48px]'>
-                  <p className='animated-text w-max text-11xl font-black sm:text-8xl'>
+                  <p className='animated-gradient-text w-max text-11xl font-black sm:text-8xl'>
                      I&apos;m Rohan Shrestha
                   </p>
                   <p className='text-10xl font-semibold text-white sm:text-7xl'>
                      Fullstack Developer
                   </p>
-                  <a className='text-6xl sm:text-xl' href='#about'>
+                  <a
+                     className='text-6xl sm:text-xl'
+                     href='https://resume.io/r/MdTHcebSr'
+                     target='_blank'
+                  >
                      <button
                         className={classNames(
                            'rounded-xl border-[3px] border-white bg-white px-[46px] py-[40px] font-medium text-black transition-all duration-150',
@@ -58,24 +62,6 @@ export default function Home() {
                   </a>
                </Layout.Content>
             </Layout.Particles>
-
-            <ContactPopup className='fixed bottom-[100px] right-[100px] z-[1000] sm:bottom-[40px] sm:right-[40px]'>
-               {(isPopupOpen, openPopup) => (
-                  <button
-                     className={classNames(
-                        'rounded-full p-[60px] transition-colors',
-                        'hover:bg-[#8FDCC2] hover:text-[#233831]',
-                        'sm:p-[20px]',
-                        isPopupOpen
-                           ? 'bg-[#8FDCC2] text-[#233831]'
-                           : 'bg-[#2C483E] text-[#D5EDE5]'
-                     )}
-                     onClick={openPopup}
-                  >
-                     <MdSend className='text-6xl sm:text-xl' />
-                  </button>
-               )}
-            </ContactPopup>
 
             <Layout.Content
                className='flex flex-col gap-[300px] sm:gap-[90px]'
@@ -186,6 +172,28 @@ export default function Home() {
                      </div>
                   ))}
                </div>
+
+               <ContactPopup
+                  className='absolute bottom-[100px] right-[100px] z-[1000] sm:bottom-[60px] sm:right-[60px]'
+                  data-aos='fade-right'
+                  data-aos-duration='700'
+               >
+                  {(isPopupOpen, openPopup) => (
+                     <button
+                        className={classNames(
+                           'rounded-full p-[60px] transition-colors',
+                           'hover:bg-[#8FDCC2] hover:text-[#233831]',
+                           'sm:p-[20px]',
+                           isPopupOpen
+                              ? 'bg-[#8FDCC2] text-[#233831]'
+                              : 'bg-[#2C483E] text-[#D5EDE5]'
+                        )}
+                        onClick={openPopup}
+                     >
+                        <MdSend className='text-6xl sm:text-xl' />
+                     </button>
+                  )}
+               </ContactPopup>
             </Layout.Content>
          </Layout>
       </Fragment>
