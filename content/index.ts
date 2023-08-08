@@ -1,5 +1,4 @@
 import {
-   SiDocker,
    SiExpress,
    SiFigma,
    SiFirebase,
@@ -12,7 +11,6 @@ import {
    SiNestjs,
    SiNextdotjs,
    SiNodedotjs,
-   SiPrisma,
    SiReact,
    SiRedux,
    SiTailwindcss,
@@ -38,12 +36,12 @@ export const tools = [
    },
    {
       Icon: SiReact,
-      name: 'React',
+      name: 'ReactJS',
       link: 'https://react.dev/',
    },
    {
       Icon: SiNextdotjs,
-      name: 'Next',
+      name: 'NextJS',
       link: 'https://nextjs.org/',
    },
    {
@@ -58,7 +56,7 @@ export const tools = [
    },
    {
       Icon: SiNodedotjs,
-      name: 'Nodejs',
+      name: 'NodeJS',
       link: 'https://nodejs.org/en',
    },
    {
@@ -68,13 +66,13 @@ export const tools = [
    },
    {
       Icon: SiExpress,
-      name: 'Express',
+      name: 'ExpressJS',
       link: 'https://expressjs.com/',
    },
    {
-      Icon: SiMongodb,
-      name: 'Mongodb',
-      link: 'https://www.mongodb.com/',
+      Icon: SiNestjs,
+      name: 'NestJS',
+      link: 'https://nestjs.com/',
    },
    {
       Icon: SiMysql,
@@ -82,14 +80,14 @@ export const tools = [
       link: 'https://www.mysql.com/',
    },
    {
-      Icon: SiPrisma,
-      name: 'Prisma',
-      link: 'https://www.prisma.io/',
+      Icon: SiMongodb,
+      name: 'Mongodb',
+      link: 'https://www.mongodb.com/',
    },
    {
-      Icon: SiDocker,
-      name: 'Docker',
-      link: 'https://www.docker.com/',
+      Icon: SiFirebase,
+      name: 'Firebase',
+      link: 'https://firebase.google.com/',
    },
 ];
 

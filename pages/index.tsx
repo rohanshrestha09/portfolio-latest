@@ -14,7 +14,7 @@ import Experience from 'components/ExperienceCard';
 import ContactPill from 'components/ContactPill';
 import ProjectCard from 'components/ProjectCard';
 import ContactPopup from 'components/ContactPopup';
-import { contacts, educations, experiences, projects, tools } from 'content';
+import { contacts, experiences, projects, tools } from 'content';
 
 export default function Home() {
    useEffect(() => {
@@ -64,7 +64,7 @@ export default function Home() {
             </Layout.Particles>
 
             <Layout.Content
-               className='flex flex-col gap-[300px] sm:gap-[90px]'
+               // className='flex flex-col gap-[300px] sm:gap-[90px]'
                id='about'
             >
                <div
@@ -83,7 +83,7 @@ export default function Home() {
                   </Experience>
                </div>
 
-               <div
+               {/* <div
                   className='flex flex-col gap-[120px] sm:gap-[60px]'
                   data-aos='fade-up'
                   data-aos-duration='700'
@@ -95,7 +95,7 @@ export default function Home() {
                         <Experience.Card {...education} key={education.key} />
                      ))}
                   </Experience>
-               </div>
+               </div> */}
             </Layout.Content>
 
             <Layout.Content
