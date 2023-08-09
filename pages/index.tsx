@@ -14,7 +14,14 @@ import Experience from 'components/ExperienceCard';
 import ContactPill from 'components/ContactPill';
 import ProjectCard from 'components/ProjectCard';
 import ContactPopup from 'components/ContactPopup';
-import { contacts, experiences, projects, tools } from 'content';
+import {
+   contacts,
+   educations,
+   freelancingExperiences,
+   projects,
+   tools,
+   workExperiences,
+} from 'content';
 
 export default function Home() {
    useEffect(() => {
@@ -64,7 +71,7 @@ export default function Home() {
             </Layout.Particles>
 
             <Layout.Content
-               // className='flex flex-col gap-[300px] sm:gap-[90px]'
+               className='flex flex-col gap-[300px] sm:gap-[90px]'
                id='about'
             >
                <div
@@ -77,13 +84,29 @@ export default function Home() {
                   </Layout.Header>
 
                   <Experience>
-                     {experiences.map((experience) => (
+                     {workExperiences.map((experience) => (
                         <Experience.Card {...experience} key={experience.key} />
                      ))}
                   </Experience>
                </div>
 
-               {/* <div
+               <div
+                  className='flex flex-col gap-[120px] sm:gap-[60px]'
+                  data-aos='fade-up'
+                  data-aos-duration='700'
+               >
+                  <Layout.Header centered={false}>
+                     Freelancing Experience
+                  </Layout.Header>
+
+                  <Experience>
+                     {freelancingExperiences.map((experience) => (
+                        <Experience.Card {...experience} key={experience.key} />
+                     ))}
+                  </Experience>
+               </div>
+
+               <div
                   className='flex flex-col gap-[120px] sm:gap-[60px]'
                   data-aos='fade-up'
                   data-aos-duration='700'
@@ -95,7 +118,7 @@ export default function Home() {
                         <Experience.Card {...education} key={education.key} />
                      ))}
                   </Experience>
-               </div> */}
+               </div>
             </Layout.Content>
 
             <Layout.Content

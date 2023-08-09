@@ -195,7 +195,7 @@ export const contacts = [
    },
 ];
 
-export const experiences = [
+export const workExperiences = [
    {
       key: 'dallotech',
       description:
@@ -207,6 +207,19 @@ export const experiences = [
       title: 'Frontend Developer',
    },
    {
+      key: 'dallotech',
+      description:
+         'In my current job at Dallotech, I work as a backend developer. I am involved in designing the architectural pattern for the backend framework and creating backend services for our application. I use a bunch of special tools like NestJS, ExpressJS, Sequelize, and TypeORM.',
+      endDate: 'Present',
+      link: 'https://dallotech.com',
+      startDate: 'Jun 2022',
+      subtitle: 'Dallotech Pvt. Ltd.',
+      title: 'Backend Developer',
+   },
+];
+
+export const freelancingExperiences = [
+   {
       key: 'rasan',
       description:
          'During my time as a freelance frontend developer, I developed the Rasan Admin Panel. This platform efficiently handles and organizes a large number of inventory, orders, and products. This project was built with React, Tailwind CSS, and React Query.',
@@ -214,7 +227,7 @@ export const experiences = [
       link: 'https://admin.rasan.com.np',
       startDate: 'July 2022',
       subtitle: 'Rasan',
-      title: 'Frontend Developer (Freelancing)',
+      title: 'Frontend Developer',
    },
 ];
 
