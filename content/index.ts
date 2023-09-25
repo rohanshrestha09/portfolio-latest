@@ -23,7 +23,7 @@ import { TbBrandGolang } from 'react-icons/tb';
 
 import BlogSansarImage from 'public/images/blogsansar.png';
 import PatraImage from 'public/images/patra.png';
-import BlogImage from 'public/images/blog.png';
+// import BlogImage from 'public/images/blog.png';
 import InstagramImage from 'public/images/insta.png';
 import DiscordImage from 'public/images/discord.png';
 import PortfolioImage from 'public/images/portfolio.png';
@@ -97,7 +97,7 @@ export const projects = [
       name: 'BlogSansar',
       description:
          'BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.',
-      link: 'https://blogsansar.live',
+      link: 'https://blogsansar.vercel.app/',
       github: 'https://github.com/rohanshrestha09/blog-express',
       images: [BlogSansarImage],
       icons: [
@@ -116,7 +116,7 @@ export const projects = [
       name: 'Patra',
       description:
          'A web application that enables instant messaging, allowing users to send and receive messages in real time.',
-      link: 'https://patra.azurewebsites.net/',
+      link: 'https://patra-91g1.onrender.com/',
       github: 'https://github.com/rohanshrestha09/patra',
       images: [PatraImage],
       icons: [
@@ -128,22 +128,22 @@ export const projects = [
          SiTypescript,
       ],
    },
-   {
-      key: 'blogsansar-v1',
-      name: 'BlogSansar v1',
-      description: `A site that lets you read and create your own blogs.`,
-      link: 'https://blog-nest.vercel.app/',
-      github: 'https://github.com/rohanshrestha09/blog-v1',
-      images: [BlogImage],
-      icons: [
-         SiMongodb,
-         SiReact,
-         SiTailwindcss,
-         FaNode,
-         SiNestjs,
-         SiTypescript,
-      ],
-   },
+   // {
+   //    key: 'blogsansar-v1',
+   //    name: 'BlogSansar v1',
+   //    description: `A site that lets you read and create your own blogs.`,
+   //    link: 'https://blog-nest.vercel.app/',
+   //    github: 'https://github.com/rohanshrestha09/blog-v1',
+   //    images: [BlogImage],
+   //    icons: [
+   //       SiMongodb,
+   //       SiReact,
+   //       SiTailwindcss,
+   //       FaNode,
+   //       SiNestjs,
+   //       SiTypescript,
+   //    ],
+   // },
    {
       key: 'instagram',
       name: 'Instagram Clone',
