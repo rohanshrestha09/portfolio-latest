@@ -1,18 +1,20 @@
 import {
+   SiAntdesign,
    SiExpress,
    SiFigma,
-   SiFirebase,
    SiGithub,
    SiGmail,
    SiJquery,
    SiLinkedin,
    SiMongodb,
-   SiMysql,
    SiNestjs,
    SiNextdotjs,
    SiNodedotjs,
+   SiPrisma,
+   SiPusher,
    SiReact,
    SiRedux,
+   SiSupabase,
    SiTailwindcss,
    SiTypescript,
 } from 'react-icons/si';
@@ -21,6 +23,7 @@ import { FaNode } from 'react-icons/fa';
 
 import { TbBrandGolang } from 'react-icons/tb';
 
+import { GrMysql } from 'react-icons/gr';
 import BlogSansarImage from 'public/images/blogsansar.png';
 import PatraImage from 'public/images/patra.png';
 // import BlogImage from 'public/images/blog.png';
@@ -75,7 +78,7 @@ export const tools = [
       link: 'https://nestjs.com/',
    },
    {
-      Icon: SiMysql,
+      Icon: GrMysql,
       name: 'MySQL',
       link: 'https://www.mysql.com/',
    },
@@ -85,9 +88,9 @@ export const tools = [
       link: 'https://www.mongodb.com/',
    },
    {
-      Icon: SiFirebase,
-      name: 'Firebase',
-      link: 'https://firebase.google.com/',
+      Icon: SiPrisma,
+      name: 'Prisma',
+      link: 'https://prisma.io/',
    },
 ];
 
@@ -98,16 +101,17 @@ export const projects = [
       description:
          'BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.',
       link: 'https://blogsansar.vercel.app/',
-      github: 'https://github.com/rohanshrestha09/blog-express',
+      github: 'https://github.com/rohanshrestha09/blog-next',
       images: [BlogSansarImage],
       icons: [
-         SiMongodb,
          SiNextdotjs,
-         SiRedux,
+         SiAntdesign,
          SiTailwindcss,
-         FaNode,
-         SiExpress,
-         SiFirebase,
+         SiRedux,
+         GrMysql,
+         SiPrisma,
+         SiSupabase,
+         SiPusher,
          SiTypescript,
       ],
    },
