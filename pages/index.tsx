@@ -134,25 +134,28 @@ export default function Home() {
                </div>
 
                <div className='grid grid-cols-3 flex-wrap justify-between gap-x-[150px] gap-y-[200px] sm:flex sm:gap-[130px]'>
-                  {tools.map(({ Icon, name, link }, index) => (
-                     <a
-                        key={name}
-                        className='flex flex-1 cursor-pointer flex-col items-center gap-[50px] transition-transform duration-300 hover:-translate-y-[6px] sm:gap-[10px]'
-                        href={link}
-                        target='_blank'
-                     >
-                        <span
-                           data-aos={index >= 6 ? 'fade-down' : 'fade-up'}
-                           data-aos-duration='700'
-                        >
-                           <Icon className='text-12xl sm:text-7xl' />
-                        </span>
+                  {tools.map(
+                     ({ Icon, name, link, visible }, index) =>
+                        visible && (
+                           <a
+                              key={name}
+                              className='flex flex-1 cursor-pointer flex-col items-center gap-[50px] transition-transform duration-300 hover:-translate-y-[6px] sm:gap-[10px]'
+                              href={link}
+                              target='_blank'
+                           >
+                              <span
+                                 data-aos={index >= 6 ? 'fade-down' : 'fade-up'}
+                                 data-aos-duration='700'
+                              >
+                                 <Icon className='text-12xl sm:text-7xl' />
+                              </span>
 
-                        <p className='text-6xl font-medium text-[#D5EDE5] sm:text-xl'>
-                           {name}
-                        </p>
-                     </a>
-                  ))}
+                              <p className='text-6xl font-medium text-[#D5EDE5] sm:text-xl'>
+                                 {name}
+                              </p>
+                           </a>
+                        )
+                  )}
                </div>
             </Layout.Content>
 
