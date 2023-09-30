@@ -6,6 +6,7 @@ import { SiGithub } from 'react-icons/si';
 import { AiOutlineLink } from 'react-icons/ai';
 
 import { IconType } from 'react-icons';
+import { tools } from '@/content';
 
 interface Props {
    index: number;
@@ -75,11 +76,18 @@ export default function ProjectCard({
 
             <div className='bottom-0 flex gap-[50px] sm:absolute sm:gap-[20px]'>
                {icons.map((Icon: IconType, index) => (
-                  <Icon
+                  <a
                      key={index}
-                     className='text-7xl text-[#D5EDE5] sm:text-2xl'
-                     title={Icon.name.slice(2)}
-                  />
+                     className='relative flex flex-col items-center'
+                     href={tools.find((tool) => tool.Icon === Icon)?.link}
+                     target='_blank'
+                  >
+                     <Icon className='peer relative text-7xl text-[#D5EDE5] transition-transform duration-300 hover:-translate-y-[6px] sm:text-2xl' />
+
+                     <span className='invisible absolute -bottom-[45px] whitespace-nowrap rounded-full bg-black px-[10px] py-[6px] text-sm opacity-0 transition-all peer-hover:visible peer-hover:opacity-100'>
+                        {tools.find((tool) => tool.Icon === Icon)?.name}
+                     </span>
+                  </a>
                ))}
             </div>
          </div>

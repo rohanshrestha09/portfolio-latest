@@ -19,8 +19,6 @@ import {
    SiTypescript,
 } from 'react-icons/si';
 
-import { FaNode } from 'react-icons/fa';
-
 import { TbBrandGolang } from 'react-icons/tb';
 
 import { GrMysql } from 'react-icons/gr';
@@ -34,63 +32,105 @@ import PortfolioImage from 'public/images/portfolio.png';
 export const tools = [
    {
       Icon: SiTailwindcss,
-      name: 'Tailwindcss',
+      name: 'TailwindCSS',
       link: 'https://tailwindcss.com/',
+      visible: true,
    },
    {
       Icon: SiReact,
       name: 'ReactJS',
       link: 'https://react.dev/',
+      visible: true,
    },
    {
       Icon: SiNextdotjs,
       name: 'NextJS',
       link: 'https://nextjs.org/',
+      visible: true,
    },
    {
       Icon: SiRedux,
       name: 'Redux',
       link: 'https://redux.js.org/',
+      visible: true,
    },
    {
       Icon: SiTypescript,
       name: 'TypeScript',
       link: 'https://www.typescriptlang.org/',
+      visible: true,
    },
    {
       Icon: SiNodedotjs,
       name: 'NodeJS',
       link: 'https://nodejs.org/en',
+      visible: true,
    },
    {
       Icon: TbBrandGolang,
       name: 'Go',
       link: 'https://go.dev/',
+      visible: true,
    },
    {
       Icon: SiExpress,
       name: 'ExpressJS',
       link: 'https://expressjs.com/',
+      visible: true,
    },
    {
       Icon: SiNestjs,
       name: 'NestJS',
       link: 'https://nestjs.com/',
+      visible: true,
    },
    {
       Icon: GrMysql,
       name: 'MySQL',
       link: 'https://www.mysql.com/',
+      visible: true,
    },
    {
       Icon: SiMongodb,
       name: 'Mongodb',
       link: 'https://www.mongodb.com/',
+      visible: true,
    },
    {
       Icon: SiPrisma,
       name: 'Prisma',
       link: 'https://prisma.io/',
+      visible: true,
+   },
+   {
+      Icon: SiAntdesign,
+      name: 'Ant Design',
+      link: 'https://ant.design/',
+      visible: false,
+   },
+   {
+      Icon: SiSupabase,
+      name: 'Supabase',
+      link: 'https://supabase.com/',
+      visible: false,
+   },
+   {
+      Icon: SiPusher,
+      name: 'Pusher',
+      link: 'https://pusher.com',
+      visible: false,
+   },
+   {
+      Icon: SiFigma,
+      name: 'Figma',
+      link: 'https://figma.com',
+      visible: false,
+   },
+   {
+      Icon: SiJquery,
+      name: 'jQuery',
+      link: 'https://jquery.com',
+      visible: false,
    },
 ];
 
@@ -127,7 +167,7 @@ export const projects = [
          SiMongodb,
          SiReact,
          SiTailwindcss,
-         FaNode,
+         SiNodedotjs,
          SiExpress,
          SiTypescript,
       ],
