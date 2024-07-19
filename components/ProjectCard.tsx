@@ -30,17 +30,17 @@ export default function ProjectCard({
    return (
       <div
          className={classNames(
-            'flex h-fit w-full flex-col gap-[100px]',
+            'group flex h-fit w-full flex-col gap-[100px]',
             'sm:justify-between sm:gap-[50px] sm:odd:flex-row sm:even:flex-row-reverse'
          )}
          data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
          data-aos-duration='700'
       >
-         <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-3/5'>
+         <div className='h-[920px] w-full overflow-hidden sm:h-[450px] sm:w-[800px]'>
             <Image
                alt='blogsansar'
                className={classNames(
-                  'h-auto w-full cursor-pointer rounded-md object-cover',
+                  'h-auto w-full cursor-pointer rounded-md object-contain',
                   images[0].height > 1080 &&
                      '-translate-y-0 transition-transform delay-0 duration-[10s] ease-in-out hover:-translate-y-[85%]'
                )}

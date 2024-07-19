@@ -44,31 +44,29 @@ export default function Home() {
                ]}
             />
 
-            <Layout.Particles>
-               <Layout.Content className='absolute left-1/2 top-1/2 flex !h-fit !min-h-fit -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-[80px] !p-0 sm:gap-[48px]'>
-                  <p className='animated-gradient-text w-max text-11xl font-black sm:text-8xl'>
-                     I&apos;m Rohan Shrestha
-                  </p>
-                  <p className='text-10xl font-semibold text-white sm:text-7xl'>
-                     Fullstack Developer
-                  </p>
-                  <a
-                     className='text-6xl sm:text-xl'
-                     href='https://resume.io/r/MdTHcebSr'
-                     target='_blank'
+            <Layout.Content className='flex flex-col items-center justify-center gap-[80px] !p-0 sm:gap-[48px]'>
+               <p className='animated-gradient-text w-max text-11xl font-black sm:text-8xl'>
+                  I&apos;m Rohan Shrestha
+               </p>
+               <p className='text-10xl font-semibold text-white sm:text-7xl'>
+                  Fullstack Developer
+               </p>
+               <a
+                  className='text-6xl sm:text-xl'
+                  href='https://resume.io/r/MdTHcebSr'
+                  target='_blank'
+               >
+                  <button
+                     className={classNames(
+                        'rounded-xl border-[3px] border-white bg-white px-[46px] py-[40px] font-medium text-black transition-all duration-150',
+                        'hover:bg-inherit hover:text-white',
+                        'sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'
+                     )}
                   >
-                     <button
-                        className={classNames(
-                           'rounded-xl border-[3px] border-white bg-white px-[46px] py-[40px] font-medium text-black transition-all duration-150',
-                           'hover:bg-inherit hover:text-white',
-                           'sm:rounded-md sm:border-[1.5px] sm:px-[16px] sm:py-[10px]'
-                        )}
-                     >
-                        Download CV
-                     </button>
-                  </a>
-               </Layout.Content>
-            </Layout.Particles>
+                     Download CV
+                  </button>
+               </a>
+            </Layout.Content>
 
             <Layout.Content
                className='flex flex-col gap-[300px] sm:gap-[90px]'
@@ -204,15 +202,13 @@ export default function Home() {
                   data-aos='fade-right'
                   data-aos-duration='700'
                >
-                  {(isPopupOpen, openPopup) => (
+                  {(_isPopupOpen, openPopup) => (
                      <button
                         className={classNames(
                            'rounded-full p-[60px] transition-colors',
-                           'hover:bg-[#8FDCC2] hover:text-[#233831]',
+                           'hover:bg-[#2C483E] hover:text-[#D5EDE5]',
                            'sm:p-[20px]',
-                           isPopupOpen
-                              ? 'bg-[#8FDCC2] text-[#233831]'
-                              : 'bg-[#2C483E] text-[#D5EDE5]'
+                           'bg-[#8FDCC2] text-[#233831]'
                         )}
                         onClick={openPopup}
                      >

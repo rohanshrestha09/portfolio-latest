@@ -1,5 +1,7 @@
 import {
    SiAntdesign,
+   SiAppwrite,
+   SiExpo,
    SiExpress,
    SiFigma,
    SiGithub,
@@ -23,6 +25,7 @@ import { TbBrandGolang } from 'react-icons/tb';
 
 import { GrMysql } from 'react-icons/gr';
 import BlogSansarImage from 'public/images/blogsansar.png';
+import ExpennseImage from 'public/images/expennse.png';
 import PatraImage from 'public/images/patra.png';
 // import BlogImage from 'public/images/blog.png';
 import InstagramImage from 'public/images/insta.png';
@@ -30,6 +33,18 @@ import DiscordImage from 'public/images/discord.png';
 import PortfolioImage from 'public/images/portfolio.png';
 
 export const tools = [
+   {
+      Icon: SiExpo,
+      name: 'Expo',
+      link: 'https://expo.dev/',
+      visible: false,
+   },
+   {
+      Icon: SiAppwrite,
+      name: 'Appwrite',
+      link: 'https://appwrite.io/',
+      visible: false,
+   },
    {
       Icon: SiTailwindcss,
       name: 'TailwindCSS',
@@ -46,6 +61,12 @@ export const tools = [
       Icon: SiNextdotjs,
       name: 'NextJS',
       link: 'https://nextjs.org/',
+      visible: true,
+   },
+   {
+      Icon: SiExpo,
+      name: 'Expo',
+      link: 'https://expo.dev/',
       visible: true,
    },
    {
@@ -100,7 +121,7 @@ export const tools = [
       Icon: SiPrisma,
       name: 'Prisma',
       link: 'https://prisma.io/',
-      visible: true,
+      visible: false,
    },
    {
       Icon: SiAntdesign,
@@ -135,6 +156,17 @@ export const tools = [
 ];
 
 export const projects = [
+   {
+      key: 'expennse',
+      name: 'expennse',
+      description:
+         'expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.',
+      link: 'https://play.google.com/store/apps/details?id=com.rohanshrestha09.expennse',
+      github:
+         'https://www.linkedin.com/posts/rohan-shrestha-9b5580232_learningproject-appdevelopment-expennse-activity-7219586356618878977-EGrT',
+      images: [ExpennseImage],
+      icons: [SiExpo, SiReact, SiAppwrite, SiTypescript],
+   },
    {
       key: 'blogsansar',
       name: 'BlogSansar',

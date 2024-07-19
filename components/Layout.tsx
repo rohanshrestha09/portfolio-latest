@@ -6,7 +6,10 @@ import { loadFull } from 'tsparticles';
 import type { Engine, ISourceOptions } from 'tsparticles-engine';
 import particlesConfig from 'particlesjs.config.json';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({
+   subsets: ['latin'],
+   weight: ['300', '400', '500', '600', '700'],
+});
 
 interface Props {
    Navbar: {
