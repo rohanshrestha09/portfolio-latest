@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Head from 'next/head';
 
 import { Fragment, useEffect } from 'react';
@@ -51,9 +52,9 @@ export default function Home() {
                <p className='text-10xl font-semibold text-white sm:text-7xl'>
                   Fullstack Developer
                </p>
-               <a
+               <Link
                   className='text-6xl sm:text-xl'
-                  href='https://resume.io/r/MdTHcebSr'
+                  href='/assets/Rohan-Shrestha-Resume.pdf'
                   target='_blank'
                >
                   <button
@@ -65,7 +66,7 @@ export default function Home() {
                   >
                      Download CV
                   </button>
-               </a>
+               </Link>
             </Layout.Content>
 
             <Layout.Content
