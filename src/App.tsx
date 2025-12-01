@@ -6,73 +6,37 @@ import {
   PreviewLinkCardImage,
   PreviewLinkCardTrigger,
 } from "@/components/animate-ui/components/radix/preview-link-card";
-import {
-  contacts,
-  //   educations,
-  freelancingExperiences,
-  projects,
-  tools,
-  workExperiences,
-} from "@/content";
+import { contacts, educations, projects, tools, workExperiences } from "@/content";
 import { cn } from "@/lib/utils";
 
-const toolSections = [
-  { label: "Languages", items: tools.languages },
-  { label: "Agentic Development", items: tools.agents },
-  { label: "Frameworks & Runtimes", items: tools.frameworks },
-  { label: "Databases & Storage", items: tools.databases },
-  { label: "Messaging & Streaming", items: tools.messaging },
-  { label: "Infrastructure & Orchestration", items: tools.infrastructure },
-  { label: "Observability & Testing", items: tools.observability },
-  { label: "Cloud & Platforms", items: tools.cloud },
-  { label: "Developer Tools", items: tools.developerTools },
-  { label: "Logical Thinking", items: tools.logicalThinking },
-].filter((section) => section.items?.length);
-
-const contactChannels = contacts.filter((contact) =>
-  ["Gmail", "Linkedin", "Github"].includes(contact.title)
-);
-
 type TimelineEntry = {
-  key: string;
   title: string;
   subtitle: string;
+  responsibilities?: string[];
   description?: string;
   link?: string;
   startDate: string;
   endDate: string;
-  category: "Full-time" | "Freelance" | "Education";
+  category: "Full-time" | "Education";
 };
 
 const experienceTimeline: TimelineEntry[] = [
   ...workExperiences.map((entry) => ({
     category: "Full-time" as const,
-    key: entry.key,
     title: entry.title,
     subtitle: entry.subtitle,
-    description: entry.description,
+    responsibilities: entry.responsibilities,
     link: entry.link,
     startDate: entry.startDate,
     endDate: entry.endDate,
   })),
-  ...freelancingExperiences.map((entry) => ({
-    category: "Freelance" as const,
-    key: entry.key,
+  ...educations.map((entry) => ({
+    category: "Education" as const,
     title: entry.title,
     subtitle: entry.subtitle,
-    description: entry.description,
-    link: entry.link,
     startDate: entry.startDate,
     endDate: entry.endDate,
   })),
-  //   ...educations.map((entry) => ({
-  //     category: "Education" as const,
-  //     key: entry.key,
-  //     title: entry.title,
-  //     subtitle: entry.subtitle,
-  //     startDate: entry.startDate,
-  //     endDate: entry.endDate,
-  //   })),
 ];
 
 export default function App() {
@@ -113,7 +77,7 @@ export default function App() {
         <div className="space-y-8">
           {experienceTimeline.map((entry) => (
             <article
-              key={`${entry.key}-${entry.category}-${entry.title}`}
+              key={`${entry.category}-${entry.title}`}
               className="border-l border-white/20 pl-5"
             >
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">{entry.category}</p>
@@ -123,19 +87,23 @@ export default function App() {
                   {entry.startDate} – {entry.endDate}
                 </span>
               </div>
-              <p className="text-sm text-white/70">{entry.subtitle}</p>
-              {"description" in entry && entry.description && (
-                <p className="mt-3 text-sm text-white/80">{entry.description}</p>
-              )}
-              {entry.link && (
-                <a
-                  className="mt-2 inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-white underline-offset-4 hover:underline"
-                  href={entry.link}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Reference
-                </a>
+              <a
+                href={entry.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-white/70 hover:underline "
+              >
+                {entry.subtitle}
+              </a>
+              {entry.responsibilities && (
+                <ul className="mt-3 space-y-3 text-sm">
+                  {entry.responsibilities.map((responsibility) => (
+                    <li className="flex items-start gap-3 text-white/80">
+                      <span className="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white" />
+                      <span>{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
               )}
             </article>
           ))}
@@ -149,7 +117,7 @@ export default function App() {
         />
 
         <div className="grid gap-8 sm:grid-cols-2">
-          {toolSections.map(({ label, items }) => (
+          {Object.entries(tools).map(([label, items]) => (
             <div key={label}>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
                 {label}
@@ -224,7 +192,7 @@ export default function App() {
         />
 
         <div className="flex flex-wrap gap-6">
-          {contactChannels.map((channel) => (
+          {contacts.map((channel) => (
             <a
               key={channel.title}
               className="group flex flex-1 items-center justify-between gap-6 border-b border-white/20 pb-4 text-sm text-white/80 transition-colors hover:text-white"

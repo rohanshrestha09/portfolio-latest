@@ -9,16 +9,16 @@ import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 // import PortfolioImage from '@/assets/images/portfolio.png';
 
 export const tools = {
-  languages: ["TypeScript", "Go", "Python", "SQL"],
-  agents: ["Langchain", "Vercel AI SDK", "Google ADK", "pgvector"],
-  frameworks: ["NextJS", "Tanstack Start", "NestJS", "Gin", "FastAPI"],
-  databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
-  messaging: ["RabbitMQ", "Redis"],
-  infrastructure: ["Docker", "Docker Compose"],
-  observability: ["New Relic", "Jest", "Playwright"],
-  cloud: ["Vercel", "Railway", "Netlify"],
-  developerTools: ["Git", "Linux"],
-  logicalThinking: ["Data Structures & Algorithms", "Systems design thinking"],
+  Languages: ["TypeScript", "Go", "Python", "SQL"],
+  "Agentic Development": ["Langchain", "Vercel AI SDK", "Google AI SDK", "pgvector"],
+  "Frameworks & Runtimes": ["Next.js", "TanStack Start", "NestJS", "Gin", "FastAPI"],
+  "Databases & Storages": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
+  "Message Queues": ["RabbitMQ", "Redis Pub/Sub"],
+  "DevOps & Containerization": ["Docker", "Docker Compose"],
+  "Testing & Monitoring": ["New Relic", "Jest", "Playwright"],
+  "Cloud Platforms": ["Vercel", "Railway", "Netlify"],
+  "Development Tools": ["Git", "Linux"],
+  "Logical Thinking": ["Data Structures & Algorithms", "System Design"],
 };
 
 export const projects = [
@@ -75,24 +75,27 @@ export const contacts = [
 
 export const workExperiences = [
   {
-    key: "dallotech",
-    description:
-      "In my current role at Dallotech, I work as a full-time frontend developer. My responsibilities include developing interactive user interfaces and integrating complex functionality. I utilize a combination of technologies such as Next.js, Tailwind CSS, Ant Design, and Redux.",
-    endDate: "Present",
+    responsibilities: [
+      "Built full-stack portfolio websites and web applications for clients from concept to deployment.",
+      "Developed interactive user interfaces and integrated complex functionality using Next.js, Tailwind CSS, Ant Design, NestJS, and TypeORM.",
+      "Collaborated with cross-functional teams to design and implement scalable architectural patterns.",
+      "Led development efforts on various government projects, ensuring compliance and quality standards.",
+      "Mentored junior developers and contributed to technical decision-making processes.",
+    ],
     link: "https://dallotech.com",
-    startDate: "Sept 2022",
+    endDate: "August 2024 (2 years 3 months)",
+    startDate: "June 2022",
     subtitle: "Dallotech Pvt. Ltd.",
-    title: "Frontend Developer",
+    title: "Full Stack Developer",
   },
+];
+
+export const educations = [
   {
-    key: "dallotech",
-    description:
-      "In my current job at Dallotech, I work as a backend developer. I am involved in designing the architectural pattern for the backend framework and creating backend services for our application. I use a bunch of special tools like NestJS, ExpressJS, Sequelize, and TypeORM.",
-    endDate: "Present",
-    link: "https://dallotech.com",
-    startDate: "Jun 2022",
-    subtitle: "Dallotech Pvt. Ltd.",
-    title: "Backend Developer",
+    title: "Nepal College of Information Technology",
+    subtitle: "Bachelor of Computer Application",
+    startDate: "April 2021",
+    endDate: "June 2025",
   },
 ];
 
