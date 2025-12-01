@@ -1,29 +1,5 @@
-import {
-  SiAntdesign,
-  SiAppwrite,
-  SiExpo,
-  SiExpress,
-  SiFigma,
-  SiGithub,
-  SiGmail,
-  SiJquery,
-  SiLinkedin,
-  SiMongodb,
-  SiNestjs,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPrisma,
-  SiPusher,
-  SiReact,
-  SiRedux,
-  SiSupabase,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
+import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 
-import { TbBrandGolang } from "react-icons/tb";
-
-import { GrMysql } from "react-icons/gr";
 // import BlogSansarImage from '@/assets/images/blogsansar.png';
 // import ExpennseImage from '@/assets/images/expennse.png';
 // import PatraImage from '@/assets/images/patra.png';
@@ -32,128 +8,18 @@ import { GrMysql } from "react-icons/gr";
 // import DiscordImage from '@/assets/images/discord.png';
 // import PortfolioImage from '@/assets/images/portfolio.png';
 
-export const tools = [
-  {
-    Icon: SiExpo,
-    name: "Expo",
-    link: "https://expo.dev/",
-    visible: false,
-  },
-  {
-    Icon: SiAppwrite,
-    name: "Appwrite",
-    link: "https://appwrite.io/",
-    visible: false,
-  },
-  {
-    Icon: SiTailwindcss,
-    name: "TailwindCSS",
-    link: "https://tailwindcss.com/",
-    visible: true,
-  },
-  {
-    Icon: SiReact,
-    name: "ReactJS",
-    link: "https://react.dev/",
-    visible: true,
-  },
-  {
-    Icon: SiNextdotjs,
-    name: "NextJS",
-    link: "https://nextjs.org/",
-    visible: true,
-  },
-  {
-    Icon: SiExpo,
-    name: "Expo",
-    link: "https://expo.dev/",
-    visible: true,
-  },
-  {
-    Icon: SiRedux,
-    name: "Redux",
-    link: "https://redux.js.org/",
-    visible: true,
-  },
-  {
-    Icon: SiTypescript,
-    name: "TypeScript",
-    link: "https://www.typescriptlang.org/",
-    visible: true,
-  },
-  {
-    Icon: SiNodedotjs,
-    name: "NodeJS",
-    link: "https://nodejs.org/en",
-    visible: true,
-  },
-  {
-    Icon: TbBrandGolang,
-    name: "Go",
-    link: "https://go.dev/",
-    visible: true,
-  },
-  {
-    Icon: SiExpress,
-    name: "ExpressJS",
-    link: "https://expressjs.com/",
-    visible: true,
-  },
-  {
-    Icon: SiNestjs,
-    name: "NestJS",
-    link: "https://nestjs.com/",
-    visible: true,
-  },
-  {
-    Icon: GrMysql,
-    name: "MySQL",
-    link: "https://www.mysql.com/",
-    visible: true,
-  },
-  {
-    Icon: SiMongodb,
-    name: "Mongodb",
-    link: "https://www.mongodb.com/",
-    visible: true,
-  },
-  {
-    Icon: SiPrisma,
-    name: "Prisma",
-    link: "https://prisma.io/",
-    visible: false,
-  },
-  {
-    Icon: SiAntdesign,
-    name: "Ant Design",
-    link: "https://ant.design/",
-    visible: false,
-  },
-  {
-    Icon: SiSupabase,
-    name: "Supabase",
-    link: "https://supabase.com/",
-    visible: false,
-  },
-  {
-    Icon: SiPusher,
-    name: "Pusher",
-    link: "https://pusher.com",
-    visible: false,
-  },
-  {
-    Icon: SiFigma,
-    name: "Figma",
-    link: "https://figma.com",
-    visible: false,
-  },
-  {
-    Icon: SiJquery,
-    name: "jQuery",
-    link: "https://jquery.com",
-    visible: false,
-  },
-];
+export const tools = {
+  languages: ["TypeScript", "Go", "Python", "SQL"],
+  agents: ["Langchain", "Vercel AI SDK", "Google ADK", "pgvector"],
+  frameworks: ["NextJS", "Tanstack Start", "NestJS", "Gin", "FastAPI"],
+  databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
+  messaging: ["RabbitMQ", "Redis"],
+  infrastructure: ["Docker", "Docker Compose"],
+  observability: ["New Relic", "Jest", "Playwright"],
+  cloud: ["Vercel", "Railway", "Netlify"],
+  developerTools: ["Git", "Linux"],
+  logicalThinking: ["Data Structures & Algorithms", "Systems design thinking"],
+};
 
 export const projects = [
   {
@@ -163,8 +29,16 @@ export const projects = [
       "Sagarmatha Labs is a software development company that provides software development services to businesses.",
     link: "https://sagarmathalabs.com/",
     github: "https://github.com/rohanshrestha09/sagarmathalabs",
-    // images: [ExpennseImage],
-    icons: [SiReact, SiTypescript],
+    tools: ["Tanstack Start", "Shadcn/UI", "Langchain", "Supabase"],
+  },
+  {
+    key: "blogsansar",
+    name: "BlogSansar",
+    description:
+      "BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.",
+    link: "https://blogsansar.vercel.app/",
+    github: "https://github.com/rohanshrestha09/blog-next",
+    tools: ["NextJS", "Shadcn/UI", "tRPC", "Supabase", "TypeScript"],
   },
   {
     key: "expennse",
@@ -174,28 +48,7 @@ export const projects = [
     link: "https://play.google.com/store/apps/details?id=com.rohanshrestha09.expennse",
     github:
       "https://www.linkedin.com/posts/rohan-shrestha-9b5580232_learningproject-appdevelopment-expennse-activity-7219586356618878977-EGrT",
-    // images: [ExpennseImage],
-    icons: [SiExpo, SiReact, SiAppwrite, SiTypescript],
-  },
-  {
-    key: "blogsansar",
-    name: "BlogSansar",
-    description:
-      "BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.",
-    link: "https://blogsansar.vercel.app/",
-    github: "https://github.com/rohanshrestha09/blog-next",
-    // images: [BlogSansarImage],
-    icons: [
-      SiNextdotjs,
-      SiAntdesign,
-      SiTailwindcss,
-      SiRedux,
-      GrMysql,
-      SiPrisma,
-      SiSupabase,
-      SiPusher,
-      SiTypescript,
-    ],
+    tools: ["Expo", "React Native", "Appwrite", "TypeScript"],
   },
 ];
 
@@ -253,22 +106,5 @@ export const freelancingExperiences = [
     startDate: "July 2022",
     subtitle: "Rasan",
     title: "Frontend Developer",
-  },
-];
-
-export const educations = [
-  {
-    key: "ncit",
-    endDate: "Present",
-    startDate: "Apr 2021",
-    subtitle: "Nepal College of Information Technology (NCIT)",
-    title: "University Level",
-  },
-  {
-    key: "omega",
-    endDate: "Mar 2020",
-    startDate: "June 2018",
-    subtitle: "Omega Int'l College",
-    title: "High School",
   },
 ];

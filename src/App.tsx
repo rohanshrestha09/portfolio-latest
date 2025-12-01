@@ -16,15 +16,18 @@ import {
 } from "@/content";
 import { cn } from "@/lib/utils";
 
-const thinkingSkills = [
-  "Data Structures & Algorithms",
-  "Systems design thinking",
-  "Product-first problem solving",
-];
-
-const visibleFrameworks = Array.from(
-  new Set(tools.filter((tool) => tool.visible).map((tool) => tool.name))
-);
+const toolSections = [
+  { label: "Languages", items: tools.languages },
+  { label: "Agentic Development", items: tools.agents },
+  { label: "Frameworks & Runtimes", items: tools.frameworks },
+  { label: "Databases & Storage", items: tools.databases },
+  { label: "Messaging & Streaming", items: tools.messaging },
+  { label: "Infrastructure & Orchestration", items: tools.infrastructure },
+  { label: "Observability & Testing", items: tools.observability },
+  { label: "Cloud & Platforms", items: tools.cloud },
+  { label: "Developer Tools", items: tools.developerTools },
+  { label: "Logical Thinking", items: tools.logicalThinking },
+].filter((section) => section.items?.length);
 
 const contactChannels = contacts.filter((contact) =>
   ["Gmail", "Linkedin", "Github"].includes(contact.title)
@@ -72,8 +75,6 @@ const experienceTimeline: TimelineEntry[] = [
   //   })),
 ];
 
-const toolMap = new Map(tools.map((tool) => [tool.Icon, tool.name]));
-
 export default function App() {
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -87,7 +88,7 @@ export default function App() {
           Rohan Shrestha
         </p>
         <h1 className="mt-4 text-3xl font-semibold">
-          Full-stack engineer crafting resilient, human-centered web products.
+          Software Engineer crafting resilient, human-centered web products.
         </h1>
         <p className="mt-4 max-w-3xl text-base text-white/70">
           I translate complex requirements into simple product surfaces. My focus is on building
@@ -147,39 +148,20 @@ export default function App() {
           description="Tools I rely on every day plus the analytical habits that keep my work resilient."
         />
 
-        <div className="grid grid-cols-2 gap-10">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-              Frameworks & Tools
-            </p>
-            <ul className="mt-4 flex flex-wrap gap-3 text-sm">
-              {visibleFrameworks.map((framework) => (
-                <li
-                  key={framework}
-                  className="rounded-full border border-white/40 px-4 py-1 text-white/90"
-                >
-                  {framework}
+        <div className="grid gap-8 sm:grid-cols-2">
+          {toolSections.map(({ label, items }) => (
+            <div key={label}>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
+                {label}
+              </p>
+              <ul className="mt-4 space-y-3 text-sm">
+                <li className="flex items-center gap-3 text-white/80">
+                  <span className="min-h-1.5 min-w-1.5 rounded-full bg-white" />
+                  <span>{items.join(", ")}</span>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
-              Thinking & Practice
-            </p>
-            <ul className="mt-4 space-y-3 text-sm">
-              {thinkingSkills.map((skill) => (
-                <li
-                  key={skill}
-                  className="flex items-start gap-3 border-b border-dotted border-white/25 pb-3 last:border-0 last:pb-0"
-                >
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-white" />
-                  <span>{skill}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              </ul>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -200,11 +182,7 @@ export default function App() {
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
                     <h3 className="text-lg font-semibold">{project.name}</h3>
                     <p className="text-xs uppercase tracking-[0.2em] text-white/60 transition-colors group-hover:text-white/80">
-                      {project.icons
-                        .map((Icon) => toolMap.get(Icon))
-                        .filter(Boolean)
-                        .slice(0, 3)
-                        .join(" • ")}
+                      {project.tools.join(" • ")}
                     </p>
                   </div>
                   <p className="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/80">
@@ -249,7 +227,7 @@ export default function App() {
           {contactChannels.map((channel) => (
             <a
               key={channel.title}
-              className="group flex flex-1 gap-6 items-center justify-between border-b border-white/20 pb-4 text-sm text-white/80 transition-colors hover:text-white"
+              className="group flex flex-1 items-center justify-between gap-6 border-b border-white/20 pb-4 text-sm text-white/80 transition-colors hover:text-white"
               href={channel.link}
               rel="noreferrer"
               target="_blank"
