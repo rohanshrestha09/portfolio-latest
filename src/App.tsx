@@ -115,7 +115,7 @@ export default function App() {
               key={`${entry.key}-${entry.category}-${entry.title}`}
               className="border-l border-white/20 pl-5"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-white/60">{entry.category}</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/60">{entry.category}</p>
               <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2 text-sm font-semibold">
                 <span>{entry.title}</span>
                 <span className="text-white/70">
@@ -189,17 +189,17 @@ export default function App() {
           description="Selected work. Hover to preview the interface in-line. Screenshots remain hidden otherwise to keep things distraction-free."
         />
 
-        <div className="space-y-6">
+        <div className="divide-white/15 divide-y">
           {projects.map((project) => (
             <PreviewLinkCard key={project.key} href={project.link} openDelay={80}>
               <PreviewLinkCardTrigger asChild>
                 <article
-                  className="border-white/15 flex cursor-pointer flex-col gap-4 rounded-2xl border bg-black/40 p-6 transition-colors hover:bg-white/10 "
+                  className="group flex cursor-pointer flex-col gap-4 py-6 transition-colors"
                   tabIndex={0}
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
                     <h3 className="text-lg font-semibold">{project.name}</h3>
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/60 transition-colors group-hover:text-white/80">
                       {project.icons
                         .map((Icon) => toolMap.get(Icon))
                         .filter(Boolean)
@@ -207,8 +207,10 @@ export default function App() {
                         .join(" • ")}
                     </p>
                   </div>
-                  <p className="text-sm leading-relaxed text-white/80">{project.description}</p>
-                  <div className="flex flex-wrap gap-4 text-sm font-semibold">
+                  <p className="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/80">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
                     <a
                       className="underline-offset-4 hover:underline"
                       href={project.github}
@@ -243,11 +245,11 @@ export default function App() {
           description="Reach out for collaborations, freelance briefs, or a quick chat about engineering craft."
         />
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-wrap gap-6">
           {contactChannels.map((channel) => (
             <a
               key={channel.title}
-              className="flex items-center justify-between rounded-2xl border border-white/20 px-5 py-4 text-sm transition-colors hover:bg-white/10"
+              className="group flex flex-1 gap-6 items-center justify-between border-b border-white/20 pb-4 text-sm text-white/80 transition-colors hover:text-white"
               href={channel.link}
               rel="noreferrer"
               target="_blank"
@@ -256,7 +258,7 @@ export default function App() {
                 <p className="text-xs uppercase tracking-[0.2em] text-white/70">{channel.title}</p>
                 <p className="mt-1 font-semibold">{channel.description}</p>
               </div>
-              <channel.Icon className="text-2xl text-white" />
+              <channel.Icon className="text-2xl text-white/70 transition-colors group-hover:text-white" />
             </a>
           ))}
         </div>
