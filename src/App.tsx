@@ -99,7 +99,7 @@ export default function App() {
                 <ul className="mt-3 space-y-3 text-sm">
                   {entry.responsibilities.map((responsibility) => (
                     <li className="flex items-start gap-3 text-white/80">
-                      <span className="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white" />
+                      {/* <span className="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white" /> */}
                       <span>{responsibility}</span>
                     </li>
                   ))}
