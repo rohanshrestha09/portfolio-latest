@@ -123,9 +123,11 @@
             <article
               class="group flex cursor-pointer flex-col gap-4 py-6 transition-colors"
               tabindex="0"
-              @mouseenter="$store.preview.show(project.image, $event)"
-              @mousemove="$store.preview.move($event)"
-              @mouseleave="$store.preview.hide()"
+              @pointerenter="$store.preview.show(project.image, $event)"
+              @pointermove="$store.preview.move($event)"
+              @pointerleave="$store.preview.hide()"
+              @pointercancel="$store.preview.hide()"
+              @touchend="$store.preview.hide()"
             >
               <div class="flex flex-wrap items-baseline justify-between gap-3">
                 <h3 class="text-lg font-semibold" x-text="project.name"></h3>
