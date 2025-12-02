@@ -1,0 +1,166 @@
+import "./style.css";
+import Alpine from "alpinejs";
+
+const calculateExperience = (startYear: number, startMonth: number) => {
+  const now = new Date();
+  let years = now.getFullYear() - startYear;
+  let months = now.getMonth() + 1 - startMonth;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  return `${years > 0 ? `${years} ${years > 1 ? "years" : "year"}` : ""}${
+    months > 0 ? ` ${months} ${months > 1 ? "months" : "month"}` : ""
+  }`;
+};
+
+Alpine.data("content", () => ({
+  preview: {
+    top: 0,
+    left: 0,
+    image: "",
+    visible: false,
+  },
+
+  showPreview(image: string, event: MouseEvent) {
+    this.preview.image = image;
+    this.preview.visible = true;
+    this.updatePreviewPosition(event);
+  },
+
+  movePreview(event: MouseEvent) {
+    if (!this.preview.visible) return;
+    this.updatePreviewPosition(event);
+  },
+
+  hidePreview() {
+    this.preview.visible = false;
+  },
+
+  updatePreviewPosition(event: MouseEvent) {
+    const offset = 24;
+    const { innerWidth, innerHeight } = window;
+    const previewWidth = 260;
+    const previewHeight = 220;
+    let left = event.clientX + offset;
+    let top = event.clientY + offset;
+
+    if (left + previewWidth > innerWidth) {
+      left = event.clientX - previewWidth - offset;
+    }
+
+    if (top + previewHeight > innerHeight) {
+      top = event.clientY - previewHeight - offset;
+    }
+
+    this.preview.left = left;
+    this.preview.top = top;
+  },
+
+  tools: {
+    Languages: ["TypeScript", "Go", "Python", "SQL"],
+    "Agentic Development": ["Langchain", "Vercel AI SDK", "Google AI SDK", "pgvector"],
+    "Frameworks & Runtimes": ["Next.js", "TanStack Start", "NestJS", "Gin", "FastAPI"],
+    "Databases & Storages": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
+    "Message Queues": ["RabbitMQ", "Redis Pub/Sub"],
+    "DevOps & Containerization": ["Docker", "Docker Compose"],
+    "Testing & Monitoring": ["New Relic", "Jest", "Playwright"],
+    "Cloud Platforms": ["Vercel", "Railway", "Netlify"],
+    "Development Tools": ["Git", "Linux"],
+    "Logical Thinking": ["Data Structures & Algorithms", "System Design"],
+  },
+
+  projects: [
+    {
+      name: "sagarmathalabs",
+      description:
+        "A knowledge-base reactive agent that pairs Notebook-style RAG search with AI-generated dashboards so teams can interrogate their documents and spin up interactive visuals without writing code.",
+      link: "https://sagarmathalabs.com/",
+      github: "https://github.com/rohanshrestha09/sagarmathalabs",
+      tools: ["Tanstack Start", "Shadcn/UI", "Langchain", "Supabase"],
+      image: "/images/sagarmathalabs.jpeg",
+    },
+    {
+      name: "BlogSansar",
+      description:
+        "BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.",
+      link: "https://blogsansar.vercel.app/",
+      github: "https://github.com/rohanshrestha09/blog-next",
+      tools: ["NextJS", "Shadcn/UI", "tRPC", "Supabase", "TypeScript"],
+      image: "/images/blogsansar.png",
+    },
+    {
+      name: "expennse",
+      description:
+        "expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.",
+      link: "https://play.google.com/store/apps/details?id=com.rohanshrestha09.expennse",
+      github:
+        "https://www.linkedin.com/posts/rohan-shrestha-9b5580232_learningproject-appdevelopment-expennse-activity-7219586356618878977-EGrT",
+      tools: ["Expo", "React Native", "Appwrite", "TypeScript"],
+      image: "/images/expennse.png",
+    },
+  ],
+
+  contacts: [
+    {
+      title: "Gmail",
+      link: "mailto:rohanshrestha.dev@gmail.com",
+      description: "rohanshrestha.dev@gmail.com",
+      path: "M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z",
+    },
+    {
+      title: "Linkedin",
+      link: "https://www.linkedin.com/in/rohan-shrestha-9b5580232",
+      description: "Rohan Shrestha",
+      path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+    },
+    {
+      title: "Github",
+      link: "https://www.github.com/rohanshrestha09",
+      description: "rohanshrestha09",
+      path: "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12",
+    },
+  ],
+
+  experiences: [
+    {
+      category: "Full-time",
+      title: "Software Engineer",
+      subtitle: "PortPro",
+      startDate: "August 2024",
+      endDate: `Present (${calculateExperience(2024, 8)})`,
+      link: "https://portpro.io",
+      responsibilities: [
+        "Built an EDI mapping agent that transforms complex EDI formats into PortPro’s standard JSON schema using Next.js, Vercel AI SDK, pgvector, and a Monaco-based editor.",
+        "Developed complex EDI solutions handling broker tenders, including the highest revenue-generating features in the product.",
+        "Involved in designing and shipping multiple agents that automate billing, tender workflows, and document validation.",
+        "Worked on an Appointment System to streamline scheduling and operational coordination.",
+        "Contributed to a rate engine capable of handling complex, dynamic rate calculations.",
+      ],
+    },
+    {
+      category: "Full-time",
+      title: "Full Stack Developer",
+      subtitle: "Dallotech Pvt. Ltd.",
+      startDate: "June 2022",
+      link: "https://dallotech.com",
+      endDate: "August 2024 (2 years 3 months)",
+      responsibilities: [
+        "Built full-stack portfolio websites and web applications for clients from concept to deployment.",
+        "Developed interactive user interfaces and integrated complex functionality using Next.js, Tailwind CSS, Ant Design, NestJS, and TypeORM.",
+        "Collaborated with cross-functional teams to design and implement scalable architectural patterns.",
+        "Led development efforts on various government projects, ensuring compliance and quality standards.",
+        "Mentored junior developers and contributed to technical decision-making processes.",
+      ],
+    },
+    {
+      category: "Education",
+      title: "Nepal College of Information Technology",
+      subtitle: "Bachelor of Computer Application",
+      startDate: "April 2021",
+      endDate: "June 2025",
+    },
+  ],
+}));
+
+Alpine.start();
