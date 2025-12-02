@@ -1,5 +1,4 @@
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
-
 import ExpennseImage from "/images/expennse.png";
 import SagarmathaLabsImage from "/images/sagarmathalabs.jpeg";
 
@@ -67,14 +66,25 @@ export const contacts = [
   },
 ];
 
+const calculateExperience = (startYear: number, startMonth: number) => {
+  const now = new Date();
+  let years = now.getFullYear() - startYear;
+  let months = now.getMonth() + 1 - startMonth;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  return `${years > 0 ? `${years} ${years > 1 ? "years" : "year"}` : ""}${
+    months > 0 ? ` ${months} ${months > 1 ? "months" : "month"}` : ""
+  }`;
+};
+
 export const workExperiences = [
   {
     title: "Software Engineer",
     subtitle: "PortPro",
     startDate: "August 2024",
-    endDate: `Present (${new Date().getFullYear() - 2024} years ${
-      new Date().getMonth() - 6
-    } months)`,
+    endDate: `Present (${calculateExperience(2024, 8)})`,
     link: "https://portpro.io",
     responsibilities: [
       "Built an EDI mapping agent that transforms complex EDI formats into PortPro’s standard JSON schema using Next.js, Vercel AI SDK, pgvector, and a Monaco-based editor.",
