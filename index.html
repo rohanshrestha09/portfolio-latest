@@ -216,11 +216,11 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-80"
-        class="pointer-events-none fixed z-50 h-36 rounded-2xl"
+        class="pointer-events-none fixed z-50 h-36"
         :style="{ top: `${$store.preview.top}px`, left: `${$store.preview.left}px` }"
       >
         <img
-          class="size-full rounded-2xl object-contain object-center"
+          class="size-full object-contain object-center"
           :src="$store.preview.image"
           loading="lazy"
         />
