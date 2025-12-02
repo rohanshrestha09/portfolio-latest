@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import {
   PreviewLinkCard,
   PreviewLinkCardContent,
@@ -46,7 +45,7 @@ export default function App() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8 text-white antialiased">
+    <main className="mx-auto max-w-5xl py-8 text-white antialiased">
       <Section bordered={false}>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">
           Rohan Shrestha
@@ -76,10 +75,7 @@ export default function App() {
 
         <div className="space-y-8">
           {experienceTimeline.map((entry) => (
-            <article
-              key={`${entry.category}-${entry.title}`}
-              className="border-l border-white/20 pl-5"
-            >
+            <article key={entry.title} className="border-l border-white/20 pl-5">
               <p className="text-xs uppercase tracking-[0.2em] text-white/60">{entry.category}</p>
               <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2 text-sm font-semibold">
                 <span>{entry.title}</span>
@@ -98,8 +94,8 @@ export default function App() {
               {entry.responsibilities && (
                 <ul className="mt-3 space-y-3 text-sm">
                   {entry.responsibilities.map((responsibility) => (
-                    <li className="flex items-start gap-3 text-white/80">
-                      {/* <span className="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white" /> */}
+                    <li key={responsibility} className="flex items-start gap-3 text-white/80">
+                      <span className="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white" />
                       <span>{responsibility}</span>
                     </li>
                   ))}
@@ -136,12 +132,17 @@ export default function App() {
       <Section id="projects">
         <SectionHeader
           eyebrow="Projects"
-          description="Selected work. Hover to preview the interface in-line. Screenshots remain hidden otherwise to keep things distraction-free."
+          description="Selected work showcasing my technical skills and problem-solving approach. Hover to preview the interface in-line."
         />
 
         <div className="divide-white/15 divide-y">
           {projects.map((project) => (
-            <PreviewLinkCard key={project.key} href={project.link} openDelay={80}>
+            <PreviewLinkCard
+              key={project.name}
+              href={project.link}
+              openDelay={80}
+              src={project.image}
+            >
               <PreviewLinkCardTrigger asChild>
                 <article
                   className="group flex cursor-pointer flex-col gap-4 py-6 transition-colors"

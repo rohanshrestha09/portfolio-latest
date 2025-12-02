@@ -1,12 +1,7 @@
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
 
-// import BlogSansarImage from '@/assets/images/blogsansar.png';
-// import ExpennseImage from '@/assets/images/expennse.png';
-// import PatraImage from '@/assets/images/patra.png';
-// import BlogImage from 'public/images/blog.png';
-// import InstagramImage from '@/assets/images/insta.png';
-// import DiscordImage from '@/assets/images/discord.png';
-// import PortfolioImage from '@/assets/images/portfolio.png';
+import ExpennseImage from "/images/expennse.png";
+import SagarmathaLabsImage from "/images/sagarmathalabs.jpeg";
 
 export const tools = {
   Languages: ["TypeScript", "Go", "Python", "SQL"],
@@ -23,16 +18,15 @@ export const tools = {
 
 export const projects = [
   {
-    key: "sagarmathalabs",
     name: "sagarmathalabs",
     description:
-      "Sagarmatha Labs is a software development company that provides software development services to businesses.",
+      "A knowledge-base reactive agent that pairs Notebook-style RAG search with AI-generated dashboards so teams can interrogate their documents and spin up interactive visuals without writing code.",
     link: "https://sagarmathalabs.com/",
     github: "https://github.com/rohanshrestha09/sagarmathalabs",
     tools: ["Tanstack Start", "Shadcn/UI", "Langchain", "Supabase"],
+    image: SagarmathaLabsImage,
   },
   {
-    key: "blogsansar",
     name: "BlogSansar",
     description:
       "BlogSansar is a web platform that allows users to write their own blogs and easily share them with others.",
@@ -41,7 +35,6 @@ export const projects = [
     tools: ["NextJS", "Shadcn/UI", "tRPC", "Supabase", "TypeScript"],
   },
   {
-    key: "expennse",
     name: "expennse",
     description:
       "expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.",
@@ -49,6 +42,7 @@ export const projects = [
     github:
       "https://www.linkedin.com/posts/rohan-shrestha-9b5580232_learningproject-appdevelopment-expennse-activity-7219586356618878977-EGrT",
     tools: ["Expo", "React Native", "Appwrite", "TypeScript"],
+    image: ExpennseImage,
   },
 ];
 
@@ -75,6 +69,27 @@ export const contacts = [
 
 export const workExperiences = [
   {
+    title: "Software Engineer",
+    subtitle: "PortPro",
+    startDate: "August 2024",
+    endDate: `Present (${new Date().getFullYear() - 2024} years ${
+      new Date().getMonth() - 6
+    } months)`,
+    link: "https://portpro.io",
+    responsibilities: [
+      "Built an EDI mapping agent that transforms complex EDI formats into PortPro’s standard JSON schema using Next.js, Vercel AI SDK, pgvector, and a Monaco-based editor.",
+      "Developed complex EDI solutions handling broker tenders, including the highest revenue-generating features in the product.",
+      "Involved in designing and shipping multiple agents that automate billing, tender workflows, and document validation.",
+      "Worked on an Appointment System to streamline scheduling and operational coordination.",
+      "Contributed to a rate engine capable of handling complex, dynamic rate calculations.",
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    subtitle: "Dallotech Pvt. Ltd.",
+    startDate: "June 2022",
+    link: "https://dallotech.com",
+    endDate: "August 2024 (2 years 3 months)",
     responsibilities: [
       "Built full-stack portfolio websites and web applications for clients from concept to deployment.",
       "Developed interactive user interfaces and integrated complex functionality using Next.js, Tailwind CSS, Ant Design, NestJS, and TypeORM.",
@@ -82,11 +97,6 @@ export const workExperiences = [
       "Led development efforts on various government projects, ensuring compliance and quality standards.",
       "Mentored junior developers and contributed to technical decision-making processes.",
     ],
-    link: "https://dallotech.com",
-    endDate: "August 2024 (2 years 3 months)",
-    startDate: "June 2022",
-    subtitle: "Dallotech Pvt. Ltd.",
-    title: "Full Stack Developer",
   },
 ];
 
@@ -96,18 +106,5 @@ export const educations = [
     subtitle: "Bachelor of Computer Application",
     startDate: "April 2021",
     endDate: "June 2025",
-  },
-];
-
-export const freelancingExperiences = [
-  {
-    key: "rasan",
-    description:
-      "During my time as a freelance frontend developer, I developed the Rasan Admin Panel. This platform efficiently handles and organizes a large number of inventory, orders, and products. This project was built with React, Tailwind CSS, and React Query.",
-    endDate: "Sept 2022",
-    link: "https://admin.rasan.com.np",
-    startDate: "July 2022",
-    subtitle: "Rasan",
-    title: "Frontend Developer",
   },
 ];
