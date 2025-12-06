@@ -73,7 +73,7 @@
                   <template x-for="responsibility in entry.responsibilities" :key="responsibility">
                     <li class="flex items-start gap-3 text-white/80">
                       <span class="min-h-1.5 min-w-1.5 mt-2 rounded-full bg-white"></span>
-                      <p x-text="responsibility"></p>
+                      <span x-html="responsibility"></span>
                     </li>
                   </template>
                 </ul>
@@ -113,8 +113,7 @@
         <div class="mb-10 space-y-3">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Projects</p>
           <p class="max-w-3xl text-base text-white/80">
-            Selected work showcasing my technical skills and problem-solving approach. Hover to
-            preview the interface in-line.
+            Selected work showcasing my technical skills and problem-solving approach.
           </p>
         </div>
 
@@ -169,7 +168,7 @@
         <div class="mb-10 space-y-3">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Contact</p>
           <p class="max-w-3xl text-base text-white/80">
-            Reach out for collaborations, freelance briefs, or a quick chat about engineering craft.
+            Reach out for collaborations or a quick chat about engineering craft.
           </p>
         </div>
 
@@ -216,7 +215,7 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-80"
-        class="pointer-events-none fixed z-50 h-36"
+        class="pointer-events-none fixed z-50 h-36 sm:block hidden"
         :style="{ top: `${$store.preview.top}px`, left: `${$store.preview.left}px` }"
       >
         <img
