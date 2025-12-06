@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rohan Shrestha · Resume</title>
+    <title>Rohan Shrestha</title>
   </head>
 
   <body>
@@ -142,14 +142,17 @@
               <div
                 class="flex flex-wrap gap-4 text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
               >
+              <template x-if="project.github">
+
                 <a
-                  class="underline-offset-4 hover:underline"
-                  :href="project.github"
-                  rel="noreferrer"
-                  target="_blank"
+                class="underline-offset-4 hover:underline"
+                :href="project.github"
+                rel="noreferrer"
+                target="_blank"
                 >
-                  Repository
-                </a>
+                Repository
+              </a>
+            </template>
                 <a
                   class="underline-offset-4 hover:underline"
                   :href="project.link"

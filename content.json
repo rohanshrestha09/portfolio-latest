@@ -6,7 +6,7 @@
     "Databases & Storages": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
     "Message Queues": ["RabbitMQ", "Redis Pub/Sub"],
     "DevOps & Containerization": ["Docker", "Docker Compose"],
-    "Testing & Monitoring": ["New Relic", "Jest", "Playwright"],
+    "Testing & Monitoring": ["New Relic", "Cloudwatch", "Jest", "Playwright"],
     "Cloud Platforms": ["Vercel", "Railway", "Netlify"],
     "Development Tools": ["Git", "Linux"],
     "Logical Thinking": ["Data Structures & Algorithms", "System Design"]
@@ -16,7 +16,6 @@
       "name": "sagarmathalabs",
       "description": "A knowledge-base reactive agent that pairs Notebook-style RAG search with AI-generated dashboards so teams can interrogate their documents and spin up interactive visuals without writing code.",
       "link": "https://sagarmathalabs.com/",
-      "github": "https://github.com/rohanshrestha09/sagarmathalabs",
       "tools": ["Tanstack Start", "Shadcn/UI", "Langchain", "Supabase"],
       "image": "/images/sagarmathalabs.jpeg"
     },
@@ -31,8 +30,7 @@
     {
       "name": "expennse",
       "description": "expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.",
-      "link": "https://play.google.com/store/apps/details?id=com.rohanshrestha09.expennse",
-      "github": "https://www.linkedin.com/posts/rohan-shrestha-9b5580232_learningproject-appdevelopment-expennse-activity-7219586356618878977-EGrT",
+      "link": "https://drive.google.com/file/d/1XGfIUpj1MQWqP1IifvtIhdBz7NgxritC/view",
       "tools": ["Expo", "React Native", "Appwrite", "TypeScript"],
       "image": "/images/expennse.png"
     }
