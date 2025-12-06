@@ -23,7 +23,6 @@
       "name": "BlogSansar",
       "description": "A full-stack blogging platform where users can write, publish, and share articles with a clean, modern interface built on Next.js and tRPC.",
       "link": "https://blog.sagarmathalabs.com/",
-      "github": "https://github.com/rohanshrestha09/blog-next",
       "tools": ["NextJS", "Shadcn/UI", "tRPC", "Supabase", "TypeScript"],
       "image": "/images/blogsansar.png"
     },

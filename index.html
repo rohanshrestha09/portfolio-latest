@@ -119,50 +119,29 @@
 
         <div class="divide-white/15 divide-y">
           <template x-for="project in projects" :key="project.name">
-            <article
-              class="group flex cursor-pointer flex-col gap-4 py-6 transition-colors"
-              tabindex="0"
-              @pointerenter="$store.preview.show(project.image, $event)"
-              @pointermove="$store.preview.move($event)"
-              @pointerleave="$store.preview.hide()"
-              @pointercancel="$store.preview.hide()"
-              @touchend="$store.preview.hide()"
-            >
-              <div class="flex flex-wrap items-baseline justify-between gap-3">
-                <h3 class="text-lg font-semibold" x-text="project.name"></h3>
-                <p
-                  class="text-xs uppercase tracking-[0.2em] text-white/60 transition-colors group-hover:text-white/80"
-                  x-text="project.tools.join(' • ')"
-                ></p>
-              </div>
-              <p
-                class="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/80"
-                x-text="project.description"
-              ></p>
-              <div
-                class="flex flex-wrap gap-4 text-sm font-semibold text-white/80 transition-colors group-hover:text-white"
+            <a :href="project.link" target="_blank" rel="noreferrer">
+              <article
+                class="group flex cursor-pointer flex-col gap-4 py-6 transition-colors"
+                tabindex="0"
+                @pointerenter="$store.preview.show(project.image, $event)"
+                @pointermove="$store.preview.move($event)"
+                @pointerleave="$store.preview.hide()"
+                @pointercancel="$store.preview.hide()"
+                @touchend="$store.preview.hide()"
               >
-              <template x-if="project.github">
-
-                <a
-                class="underline-offset-4 hover:underline"
-                :href="project.github"
-                rel="noreferrer"
-                target="_blank"
-                >
-                Repository
-              </a>
-            </template>
-                <a
-                  class="underline-offset-4 hover:underline"
-                  :href="project.link"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Live Preview
-                </a>
-              </div>
-            </article>
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3 class="text-lg font-semibold" x-text="project.name"></h3>
+                  <p
+                    class="text-xs uppercase tracking-[0.2em] text-white/60 transition-colors group-hover:text-white/80"
+                    x-text="project.tools.join(' • ')"
+                  ></p>
+                </div>
+                <p
+                  class="text-sm leading-relaxed text-white/70 transition-colors group-hover:text-white/80"
+                  x-text="project.description"
+                ></p>
+              </article>
+            </a>
           </template>
         </div>
       </section>
@@ -218,7 +197,7 @@
         x-transition:leave="transition ease-in duration-200"
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-80"
-        class="pointer-events-none fixed z-50 h-36 sm:block hidden"
+        class="pointer-events-none fixed z-50 hidden h-36 sm:block"
         :style="{ top: `${$store.preview.top}px`, left: `${$store.preview.left}px` }"
       >
         <img
