@@ -27,6 +27,12 @@
       "image": "/images/blogsansar.png"
     },
     {
+      "name": "Student Shop",
+      "description": "A full-stack e-commerce platform built with Next.js that connects students with exclusive discounts and deals, featuring a comprehensive admin dashboard for managing products, orders, promotions, user verification, and content configuration.",
+      "link": "https://shop.sagarmathalabs.com/",
+      "tools": ["NextJS", "AntDesign", "Go", "MySQL"]
+    },
+    {
       "name": "expennse",
       "description": "expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.",
       "link": "https://drive.google.com/file/d/1XGfIUpj1MQWqP1IifvtIhdBz7NgxritC/view",
