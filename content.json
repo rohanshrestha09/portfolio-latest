@@ -17,27 +17,32 @@
       "description": "A knowledge-base reactive agent that pairs Notebook-style RAG search with AI-generated dashboards so teams can interrogate their documents and spin up interactive visuals without writing code.",
       "link": "https://sagarmathalabs.com/",
       "tools": ["Tanstack Start", "Shadcn/UI", "Langchain", "Supabase"],
-      "image": "/images/sagarmathalabs.jpeg"
+      "image": "/images/sagarmathalabs.jpeg",
+      "height": "h-60"
     },
     {
       "name": "BlogSansar",
       "description": "A full-stack blogging platform where users can write, publish, and share articles with a clean, modern interface built on Next.js and tRPC.",
       "link": "https://blog.sagarmathalabs.com/",
       "tools": ["NextJS", "Shadcn/UI", "tRPC", "Supabase", "TypeScript"],
-      "image": "/images/blogsansar.png"
+      "image": "/images/blogsansar.png",
+      "height": "h-60"
     },
     {
       "name": "Student Shop",
       "description": "A full-stack e-commerce platform built with Next.js that connects students with exclusive discounts and deals, featuring a comprehensive admin dashboard for managing products, orders, promotions, user verification, and content configuration.",
       "link": "https://shop.sagarmathalabs.com/",
-      "tools": ["NextJS", "AntDesign", "Go", "MySQL"]
+      "tools": ["NextJS", "AntDesign", "Go", "MySQL"],
+      "image": "/images/student-shop.png",
+      "height": "h-80"
     },
     {
       "name": "expennse",
       "description": "expennse is a mobile application build with expo and react native that allows user to track their expenses with attractive visualization charts.",
       "link": "https://drive.google.com/file/d/1XGfIUpj1MQWqP1IifvtIhdBz7NgxritC/view",
       "tools": ["Expo", "React Native", "Appwrite", "TypeScript"],
-      "image": "/images/expennse.png"
+      "image": "/images/expennse.png",
+      "height": "h-60"
     }
   ],
 
