@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rohan Shrestha</title>
+    <link rel="preload" as="image" href="/images/sagarmathalabs.jpeg" />
+    <link rel="preload" as="image" href="/images/blogsansar.png" />
+    <link rel="preload" as="image" href="/images/expennse.png" />
+    <link rel="preload" as="image" href="/images/student-shop.png" />
   </head>
 
   <body>
@@ -198,13 +202,12 @@
           x-transition:leave="transition ease-in duration-200"
           x-transition:leave-start="opacity-100 scale-100"
           x-transition:leave-end="opacity-0 scale-80"
-          class="pointer-events-none fixed z-50 h-60 hidden sm:block"
+          class="pointer-events-none fixed z-50 hidden h-60 sm:block"
           :style="{ top: `${$store.preview.top}px`, left: `${$store.preview.left}px` }"
         >
           <img
             class="size-full object-contain object-center"
             :src="$store.preview.image"
-            loading="lazy"
           />
         </div>
       </template>
