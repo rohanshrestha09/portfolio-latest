@@ -2,17 +2,13 @@
 @import "tailwindcss";
 
 @layer base {
-  [x-cloak] {
-    display: none !important;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: "Space Grotesk", "Inter", "Segoe UI", system-ui, -apple-system,
-      BlinkMacSystemFont, sans-serif;
+    font-family: "Space Grotesk", "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+      sans-serif;
     font-feature-settings: "liga" 1, "kern" 1;
     text-rendering: optimizeLegibility;
     background-color: oklch(0.145 0 0);
