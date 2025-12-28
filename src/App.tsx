@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { FaFilePdf } from 'react-icons/fa6'
 import { SiGmail, SiLinkedin, SiGithub } from 'react-icons/si'
+import { cva } from 'class-variance-authority'
 import { calculateExperience, formatResponsibility } from '@/lib/utils'
 import { ExperienceCard } from '@/components/experience-card'
 import { SectionHeader } from '@/components/section-header'
@@ -10,6 +11,16 @@ import { BlogCard, BlogCardSkeleton } from '@/components/blog-card'
 import content from '@/content.json'
 import { fetchBlogs } from '@/lib/blog'
 import type { Blog } from '@/types/blog'
+
+const buttonVariants = cva('', {
+  variants: {
+    variant: {
+      default:
+        'inline-flex items-center rounded-full border border-white bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-transparent hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white',
+      icon: 'inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10 hover:text-white text-lg text-white/70',
+    },
+  },
+})
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -54,10 +65,11 @@ export default function App() {
           Hello, I’m Rohan Shrestha
         </h1>
         <p className='mt-3 text-base text-white/80'>
-          Software Engineer with a proven track record of designing and operating scalable full-stack systems and AI driven solutions.
+          Software Engineer with a proven track record of designing and
+          operating scalable full-stack systems and AI driven solutions.
         </p>
 
-        <div className='mt-6 flex items-center gap-3 text-lg text-white/70'>
+        <div className='mt-6 flex items-center gap-3'>
           {contacts.map(channel => (
             <a
               key={channel.title}
@@ -65,7 +77,9 @@ export default function App() {
               rel='noreferrer'
               href={channel.link}
               title={channel.title}
-              className='inline-flex h-10 items-center justify-center rounded-md bg-white/5 px-3 transition-colors hover:bg-white/10 hover:text-white'
+              className={buttonVariants({
+                variant: channel.title === 'Resume' ? 'default' : 'icon',
+              })}
             >
               {channel.title === 'Gmail' && <SiGmail className='text-xl' />}
               {channel.title === 'Linkedin' && (
@@ -73,7 +87,7 @@ export default function App() {
               )}
               {channel.title === 'Github' && <SiGithub className='text-xl' />}
               {channel.title === 'Resume' && (
-                <span className='flex items-center gap-2 text-base'>
+                <span className='flex items-center gap-2'>
                   <FaFilePdf className='text-xl' /> Download CV
                 </span>
               )}

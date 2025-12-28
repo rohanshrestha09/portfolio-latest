@@ -50,7 +50,7 @@ export function ProjectCard({
           onMouseLeave={hidePreview}
         >
           <div className='flex flex-wrap items-baseline justify-between gap-3'>
-            <h3 className='text-lg font-semibold'>{name}</h3>
+            <h3 className='text-xl font-semibold'>{name}</h3>
             <p className='text-xs tracking-[0.2em] text-white/60 uppercase transition-colors group-hover:text-white/80'>
               {tools.join(' • ')}
             </p>
