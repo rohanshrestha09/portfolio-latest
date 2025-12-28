@@ -38,29 +38,29 @@ export function BlogCard({
           </div>
 
           <a href={`${import.meta.env.VITE_BLOG_URL}/blog/${slug}`} target='_blank' rel='noreferrer'>
-            <h2 className='mb-2 cursor-pointer font-serif text-xl font-bold'>
+            <h2 className='mb-2 cursor-pointer text-xl font-bold'>
               {title}
             </h2>
           </a>
 
-          <p className='mb-3 line-clamp-3 text-pretty text-white/70 leading-relaxed'>
+          <p className='mb-3 line-clamp-3 text-sm text-pretty text-white/70 leading-relaxed'>
             {excerpt}
           </p>
 
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-2'>
-              <span className='rounded-md bg-white/5 px-2 py-1 text-sm text-white/70'>
+              <span className='rounded-md bg-white/5 px-2 py-1 text-xs text-white/70'>
                 {category}
               </span>
             </div>
             <div className='flex items-center gap-2'>
-              <div className='text-sm text-white/60'>
+              <div className='text-xs text-white/60'>
                 {viewsCount} views
               </div>
-              <div className='text-sm text-white/60'>
+              <div className='text-xs text-white/60'>
                 {likesCount} likes
               </div>
-              <div className='text-sm text-white/60'>
+              <div className='text-xs text-white/60'>
                 {commentsCount} comments
               </div>
             </div>
